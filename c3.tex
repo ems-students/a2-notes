@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\title{C3}
+\author{Callum O'Brien}
+
+\begin{document}
+
+\maketitle
+
+\section{Partial Fractions}
+\subsection{Splitting a Fraction with Two or More Linear Factors in the Denominator}
+\[\frac{x+3}{(x+2)(x+1)}=\frac{a}{x+2}+\frac{b}{x+1}=\frac{a(x+1)+b(x+2)}{(x+2)(x+1)}\]
+\[\therefore x+3=a(x+1)+b(x+2)\]
+Here, two methods can be used; equating coefficients and substitution. Equating coefficients is rather self explanatory, and involves creating simultaneous equations from the fact that coefficients of different powers of $x$ will be equal on both the left- and right-hand-side of the above equation, then solving for A and B;
+\[\textit{coefficients of }x\textit{: }1=a+b\]
+\[\textit{constants: }3=a+2b\]
+\noindent The former rearranges to
+\[b=1-a\]
+\noindent Substituting this into the latter shows
+\[3=a+2(1-a)=2-a\therefore a=-1\Rightarrow b=2\]
+\noindent Hence,
+\[\frac{x+3}{(x+2)(x+1)}=\frac{2}{x+1}-\frac{1}{x+2}\]
+\noindent Substitution involves substituting values for $x$ which neglect one of the unknowns in our equation. In the above example, one would substitute the values $-1$ and $-2$ to neglect the terms containting $a$ and $b$ repectively;
+\[x\rightarrow-1\textit{, }b=2\]
+\[x\rightarrow-2\textit{, }-a=1\therefore a=-1\]
+And once again, we arrive at the same partial fractions,
+\[\frac{x+3}{(x+2)(x+1)}=\frac{2}{x+1}-\frac{1}{x+2}\]
+
+\subsection{Splitting a Fraction with a Squared Linear Factor in the Denominator}
+\[\frac{}{()^2}=\frac{a}{}+\frac{b}{()^2}=\frac{a()+b}{()^2}\]
+\[=a()+b\]
+\end{document}
+                 
