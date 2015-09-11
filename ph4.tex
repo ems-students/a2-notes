@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\title{Simple Harmonic Motion}
+\author{Callum O'Brien}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Simple Harmonic Motion}
+
+\noindent In simple harmonic motion, acceleration is proportional to displacement and opposite in sign;
+
+\[x=lx_m\cos(\omega t+\phi)\]
+\[\frac{\textrm{d}x}{\textrm{d}t}=-\omega x_m\sin(\omega t+\phi)\]
+\[\frac{\textrm{d}^2x}{\textrm{d}t^2}=-\omega^2x_m\cos(\omega t+\phi)\]
+An example of simple harmonic motion is a mass on a spring. 
+\[T=2\pi\sqrt{\frac{m}{k}}\]
+\begin{itemize}
+	\item $m$ is mass
+	\item $k$ is spring constant
+\end{itemize}
+Pendula aren't but if they are long and the angle is small they pretty much are.
+\[T=2\pi\sqrt{\frac{L}{g}}\]
+\begin{itemize}
+	\item $L$ is length
+\end{itemize}
+
+\subsection{Uniform Circular Motion}
+The projection of a point moving in uniform circular motion on a diameter of the circle in which the motion occurs executes SHM.
+
+\subsection{Relationships between Velocity, Acceleration \& Displacement}
+
+\subsection{Damped Oscillations}
+The energy of an oscillating system is the only factor directly related to the amplitude of the oscillation. If energy is removed from the system over time, such as by friction, the amplitude of the oscillation decreases over time. This is called \textbf{damped harmonic motion}. In damped harmonic motion, frequency and period stay the same, as they are not related to amplitude. In most cases, the damping is caused by an external force which does work in the opposite direction to velocity. Damped systems obey the following;
+\[x(t)=x_me^{-\frac{bt}{2m}}\cos\left(t\sqrt{\left(1-\frac{b}{2m}\right)^2}+\phi\right)\]
+
+\subsection{Driven Oscillations}
+If energy is put into an oscillating system over time, the system is undergoing \textbf{driven oscillation}. Every system has a \textbf{natural frequecy} $\omega_d$ at which it oscillates if the oscillation is driven at this natural frequency, the driving \textbf{resonates} with the oscillation, and things get a bit out of hand.
+
+\[x_m=\frac{F_0}{\sqrt{m^2\left(\omega^2-\omega_d^2\right)^2+b^2\omega_d^2}}\]
+
+\subsection{Electromagnetism}
+
+\subsection{Capacitors}
+
+% capacitor circuit diagram symbol
+
+Capacitors are a way to store energy/charge. The energy is stored in the electric field inbetween the two plates.
+
+\[C=\frac{Q}{V}\]
+\[C=\frac{\epsilon_0A}{d}\]
+
+\begin{itemize}
+	\item $C$ is capacitance
+	\item $Q$ is charge
+	\item $V$ is potential difference
+	\item $\epsilon_0$ is the permiativity of free space
+	\item $A$ is the area of the plates
+	\item $d$ is the distance between the plates
+\end{itemize}
+
+\end{document}
