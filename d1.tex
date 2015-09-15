@@ -11,12 +11,60 @@
 
 \maketitle
 \tableofcontents
+\newpage
 
 \section{Definitions}
+
 A \textbf{graph} consists of points called \textbf{vertices} or \textbf{nodes} which are connected by lines called \textbf{edges} or \textbf{arcs}. If a graph has a number associated with each edge it is a \textbf{network}. Vertices/nodes are referred to by letters, whereas edges are referred to are referred to by two letters.
 
-A subgraph of $G$ is a graph, all of whose vertices belong to $G$. The \textbf{degree} or \textbf{valency} of a vertex is the number of edges incident to it. A \textbf{path} is a finite sequence of edges such that the end node of one edge in the sequence is the start node of the next and in which no node appears more than once. A \textbf{walk} is a path in which some verticies may appears more than once. A \textbf{cycle} or \textbf{circuit} is a closed path, where the finial vertex is the same as the initial one. Two nodes are \textbf{connected} if there exists some path between them. A graph is connected if all its nodes are connected to every other. A \textbf{loop} is an edge which connects a node to itself.
+A \textbf{subgraph} of $G$ is a graph, all of whose vertices belong to $G$. The \textbf{degree} or \textbf{valency} of a vertex is the number of edges incident to it. A \textbf{path} is a finite sequence of edges such that the end node of one edge in the sequence is the start node of the next and in which no node appears more than once. A \textbf{walk} is a path in which some verticies may appears more than once. A \textbf{cycle} or \textbf{circuit} is a closed path, where the finial vertex is the same as the initial one. Two nodes are \textbf{connected} if there exists some path between them. A graph is connected if all its nodes are connected to every other. A \textbf{loop} is an edge which connects a node to itself.
 
 A \textbf{simple} graph has no loops. A \textbf{directed} edge $AB$ connects $A$ to $B$ but not $B$ to $A$. A graph with directed edges is a \textbf{digraph}. A graph which contains no cycles is a \textbf{tree}. If all nodes within a graph share an edge, the graph is \textbf{complete}. In a \textbf{bipartite} graph, there are two groups of nodes with no direct connections between them.
+
+\section{Networks}
+
+\subsection{Minimum Spanning Trees of Networks}
+
+A \textbf{minimum spanning tree} of a network is a way to connect all the nodes of the network with a minimum weight. Given a complete network, there are two algorithms to find the minimum spanning tree; Kruskal's algorithm and Prim's algorithm.
+
+\subsubsection{Kruskal's Algorithm}
+
+\begin{enumerate}
+	\item Sort all the edges into ascending order of weight
+	\item Select the edge of least weight to start the tree
+	\item If the edge of next least weight would form a cycle with an already selected edge, reject it; else, add it to the tree
+	\item If all the nodes are connected, finish; else, goto 3.
+\end{enumerate}
+
+\subsubsection{Prim's Algorithm}
+
+Prim's algorithm provides an advantage when it is preferable to have a central locus for the connections like on the national grid (power stations).
+\begin{enumerate}
+	\item Choose any node to start the tree
+	\item Select an edge of least weight that joins a node that is already in the tree to a node that is not in the tree
+	\item If all nodes are connected, finish; else, goto 2
+\end{enumerate}
+
+\subsection{Adjacency Matrices}
+
+An adjacency matrix shows which nodes are directly connected to one another.
+
+% Make some graph
+
+The adjacency matrix of the above graph is;
+
+% Make some matrix
+
+\subsection{Distance Matrices}
+
+A distance matrix is like an adjacency matrix but with distance instead of N\textsuperscript{o} connections. Prim's algorithm can operate on a distance matrix;
+\begin{enumerate}
+	\item Choose any node to start the tree
+	\item Delete the row in the matrix for the chosen node
+	\item Number the column in the matrix for the chosen node
+	\item Select a minimal undeleted entry in the numbered columns
+	\item Add this to the tree
+	\item If all rows are deleted, finish; else goto 2
+\end{enumerate}
 
 \end{document}
