@@ -13,15 +13,13 @@
 \tableofcontents
 \newpage
 
-\section{Definitions}
+\section{Networks}
 
 A \textbf{graph} consists of points called \textbf{vertices} or \textbf{nodes} which are connected by lines called \textbf{edges} or \textbf{arcs}. If a graph has a number associated with each edge it is a \textbf{network}. Vertices/nodes are referred to by letters, whereas edges are referred to are referred to by two letters.
 
 A \textbf{subgraph} of $G$ is a graph, all of whose vertices belong to $G$. The \textbf{degree} or \textbf{valency} of a vertex is the number of edges incident to it. A \textbf{path} is a finite sequence of edges such that the end node of one edge in the sequence is the start node of the next and in which no node appears more than once. A \textbf{walk} is a path in which some verticies may appears more than once. A \textbf{cycle} or \textbf{circuit} is a closed path, where the finial vertex is the same as the initial one. Two nodes are \textbf{connected} if there exists some path between them. A graph is connected if all its nodes are connected to every other. A \textbf{loop} is an edge which connects a node to itself.
 
 A \textbf{simple} graph has no loops. A \textbf{directed} edge $AB$ connects $A$ to $B$ but not $B$ to $A$. A graph with directed edges is a \textbf{digraph}. A graph which contains no cycles is a \textbf{tree}. If all nodes within a graph share an edge, the graph is \textbf{complete}. In a \textbf{bipartite} graph, there are two groups of nodes with no direct connections between them.
-
-\section{Networks}
 
 \subsection{Minimum Spanning Trees of Networks}
 
@@ -47,6 +45,36 @@ Prim's algorithm provides an advantage when it is preferable to have a central l
 
 \subsection{Adjacency Matrices}
 
-An adjacency matrix shows which nodes are directly connected to one another. 
+An adjacency matrix shows which nodes are directly connected to one another.
+
+\subsection{Distance Matricies}
+
+A distance matrix shows the distances between nodes. Prim's algorithm can be applied to distance matricies;
+
+\subsection{Dijkstra's Algorithm}
+This algorithm is used to find the shortest path from $S$ to $T$;\begin{enumerate}
+	\item Label $S$ with the final label 0
+	\item Record a working value at every node $Y$ that is directly connected to the node $X$ that has just received its final label s.t.;\begin{itemize}
+			\item $\textit{Working value at }Y=\textit{final value at }X+\textit{weight of arc XY}$
+			\item If there is already a working value at $Y$ it is only replaced if the new value is smaller
+			\item Once a value has a final label it is not revisited and its working values are no longer considered
+		\end{itemize}
+	\item Look at the working values at all vertices without final labels. Select the smallest working value, This now becomes the final label at that vertex. If two vertices have the same smallest working value, choose either
+	\item Repeat steps 2 and 3 until the destination node $T$ receives its final label
+	\item To find the shortest path, trace back from $T$ to $S$. If $B$ is on the route, include arc $AB$ whenever $\textit{final label }B-\textit{final label }A=\textit{weight of arc }AB$
+\end{enumerate}
+
+\subsection{Route Inspection}
+Non-eulerian graphs have more than two nodes with odd degree; in these, there exists no path that traverses every path once and only once. Semi-eulerian graphs have two nodes with odd degree; there are paths that traverse all edges only once in these graphs, but no cycles. Eulerian graphs have an even N\textsuperscript{o} nodes with odd degree and there are cycles that transverse all edges once.
+
+In an Eulerian graph, the weight of the shortest cycle connecting all nodes is equal to the weight of the network. In a semi-eulerian graph, the weight of the shortest cycle is equal to the weight of the network plus the weight of the shortest path from one of the odd nodes to the other.
+
+For an arbitrary graph, one selects the shortest cycle by reducing it to a eulerian graph;\begin{enumerate}
+	\item Identify all nodes with odd degree
+	\item Consider all possible pairings of these vertices
+	\item select the complete pairing that has the least sum
+	\item add a repeat of the arc identified by this pairing to the network
+	\item find your route around this network as in an eulerian graph
+\end{enumerate}
 
 \end{document}
