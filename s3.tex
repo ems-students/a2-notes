@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage[round]{natbib}
+
+\title{Statistics 3 Notes}
+\author{Will Bevington \and Alex Pace}
+
+\begin{document}
+	\maketitle
+    \tableofcontents
+    \newpage
+    %---------------------------------------------------------------------------------------------------------------------------
+    \section{Topic 1: Combining Random Variables}
+    	\textit{X} and \textit{Y} are two independent random variables with means \textit{E(X)} and \textit{E(Y)}, and variables \textit{Var(X)} and \textit{Var(Y)} \\\\ 
+        Our aim is to find: \textit{E(X$\pm$Y)} and \textit{Var(X$\pm$Y)} \\
+        \begin{center}
+        	$E(X\pm Y) = E(X) \pm E(Y) $ \\ $Var(X\pm Y) = Var(X) + Var(Y)$
+        \end{center}
+        $E(aX + b) = aE(X) + b \\ Var(aX + b) = a^2Var(X) + b$ \\\\ These last two formulas should be recalled from S1. We can combine these last four formulas to acquire:
+        \begin{center}
+			$E(aX\pm bY) = aE(X)\pm bE(y)$ \\ $Var(aX\pm bY) = a^2Var(X)+b^2E(Y)$
+		\end{center}
+        The combination of two independent Normal distributions is also a Normal distribution, and can be expressed thus: \\\\
+        $X~N(\mu x , \sigma^2x)$ \\ $Y~N(\mu y , \sigma^2 y)$
+        \begin{center}
+			$aX\pm bY~N(a\mu x\pm b\mu y , a^2\sigma x^2+b^2\sigma y^2)$
+		\end{center}
+\end{document}
