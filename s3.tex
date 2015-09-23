@@ -11,19 +11,109 @@
     \tableofcontents
     \newpage
     %---------------------------------------------------------------------------------------------------------------------------
-    \section{Topic 1: Combining Random Variables}
-    	\textit{X} and \textit{Y} are two independent random variables with means \textit{E(X)} and \textit{E(Y)}, and variables \textit{Var(X)} and \textit{Var(Y)} \\\\ 
+	\section{Topic 1: Combining Random Variables}
+		\textit{X} and \textit{Y} are two independent random variables with means \textit{E(X)} and \textit{E(Y)}, and variables \textit{Var(X)} and \textit{Var(Y)} \\\\ 
         Our aim is to find: \textit{E(X$\pm$Y)} and \textit{Var(X$\pm$Y)} \\
-        \begin{center}
-        	$E(X\pm Y) = E(X) \pm E(Y) $ \\ $Var(X\pm Y) = Var(X) + Var(Y)$
-        \end{center}
+		\begin{center}
+        		$E(X\pm Y) = E(X) \pm E(Y) $ \\ $Var(X\pm Y) = Var(X) + Var(Y)$
+        	\end{center}
         $E(aX + b) = aE(X) + b \\ Var(aX + b) = a^2Var(X) + b$ \\\\ These last two formulas should be recalled from S1. We can combine these last four formulas to acquire:
-        \begin{center}
+        	\begin{center}
 			$E(aX\pm bY) = aE(X)\pm bE(y)$ \\ $Var(aX\pm bY) = a^2Var(X)+b^2E(Y)$
 		\end{center}
-        The combination of two independent Normal distributions is also a Normal distribution, and can be expressed thus: \\\\
+        	The combination of two independent Normal distributions is also a Normal distribution, and can be expressed thus: \\\\
         $X~N(\mu x , \sigma^2x)$ \\ $Y~N(\mu y , \sigma^2 y)$
-        \begin{center}
+        	\begin{center}
 			$aX\pm bY~N(a\mu x\pm b\mu y , a^2\sigma x^2+b^2\sigma y^2)$
 		\end{center}
+	\section{Sampling Frame}s
+		\subsection{Key Words}
+			\begin{description}
+				\item{Population} The whole set of items that are of interest.
+                                \item{Census} Observes or measures every memeber of a population.
+                                \item{Sample Survey} A selection of observations taken from a subset of the population which is used to find out information about the population as a whole.
+                                \item{Random Sample} A sample in which every possible sample of size $n$ has an equal chance of being selected.
+				\item{Sampling Frame} A list identifying every single sampling unit that could be included in the sample
+		\subsection{Random Sample}
+			\textbf{Random Number Sample} \\
+			Give each sampling unit in the sampling frame a number and use a random number generator or random number tables to select required number of samplng units. \\\\
+			\textbf{Lottery Sample} \\
+			Put the sampling units from the sampling frame into a "hat" and select randomly without replacing. \\\\
+			\textbf{Positives}
+			\begin{itemize}
+				\item Random and free from bias
+				\item Easy to carry out
+			\end{itemize}
+			\textbf{Negatives}
+			\begin{itemize}
+				\item Not suitable for large sample sizes
+			\end{itemize}
+		\subsection{Systematic Sampling}
+			Pick at required intervals from an ordered list.\\
+			e.g. I want a sample of 15 from 60: $\frac{60}{15} = 4$ Therefore, choose a starting point randomly from one of the first four sampling unit from the ordered list, then choose every fourth sampling unit after until you have selected 15. \\\\
+			\textbf{Positives}
+                        \begin{itemize}
+				\item Suitable for large samples
+				\item Is easy to carry out
+                        \end{itemize}
+                        \textbf{Negatives}
+                        \begin{itemize}
+                        	\item Sample is not random unless the ordered list is random
+				\item Can introduce bias
+                        \end{itemize}
+		\subsection{Stratified Sampling}
+			A form of random sampling: The population is split into mutually exclusive groups (strata). Random samples are taken from each strata, the relative size of each corresponds to the same ratio as each strata's representation in the total population. \\\\
+			\textbf{Positives}
+                        \begin{itemize}
+				\item Works well with large samples that can be split into mutually exclusive groups
+				\item Reflects a populations structure
+                        \end{itemize}
+                        \textbf{Negatives}
+                        \begin{itemize}
+                        	\item Takes longer than random sampling
+				\item Within each strata the problems are the same as with any random sample.
+				\item Ill defined strata can overlap (meaning they are no longer mutually exclusive)
+				\item Can't provide accurate data when strata overlap/
+                        \end{itemize}
+		\subsection{Quota Sampling}
+			When no sampling frame is available, quota sampling may be used. The population is divided nto groups (as with sratified sampling). Quotas for each group are created that corrrespond with the groups representation in the total population. The interviewer then selects sampling units until each quota is reached. \\\\
+			\textbf{Positives}
+                        \begin{itemize}
+				\item Administering the test is easy
+				\item Test is low cost
+				\item Test is quick if the sample is small
+                        \end{itemize}
+                        \textbf{Negatives}
+                        \begin{itemize}
+                        	\item Introduces interviewer bias
+				\item Can't estimate sampling errors
+                        \end{itemize}
+	\section{Types of Data}
+		\subsection{Primary Data}
+			When you collect data, or someone collects data on your behalf. \\\\
+			\textbf{Positives}
+                        \begin{itemize}
+				\item You have control over the type and method of collection
+				\item The exact data needed is collected
+				\item The Accuracy is known
+                        \end{itemize}
+                        \textbf{Negatives}
+                        \begin{itemize}
+                        	\item Expensive (money and time)
+                        \end{itemize}
+		\subsection{Seconday Data}
+			Second ahnd data, collected by another person or organisation. \\\\
+			\textbf{Positives}
+                        \begin{itemize}
+				\item Cheaper than gathering primary data (time and money)
+				\item Large amounts of data are easily available on the internet
+				\item Access to data over time (trends)
+                        \end{itemize}
+                        \textbf{Negatives}
+                        \begin{itemize}
+                        	\item Bias is not always acknowledged
+				\item Accuracy is not known
+				\item Certain data can be in a form that is difficult to deal with
+                        \end{itemize}		
+
 \end{document}
