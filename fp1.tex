@@ -15,7 +15,32 @@
 \tableofcontents
 \newpage
 
-\section{Matrix Transformations}
+\section{Matrices}
+                A matrix is a grid of values:
+                \[\left(\begin{array}{cc} a & b \\ c & d \end{array}\right)\]
+                similar matrices can be added with each term adding to the corresponding term on the other matrix. Multlipication however is a little more complex. The first matrix must have the same number of columns as the second matrix has rows. This is because when you muliply a matrix by another, you take the top row of the first and times each number by it's partner in the frist column of the second, this give you your value for the top left corner of your new matrix. e.g.
+                \[\left(\begin{array}{ccc} 1 & 2 & 3 \\ 5 & 10 & -1 \end{array}\right) \times \left(\begin{array}{cc} 0 & 2 \\ 3 & -1 \\ 1 & 0 \end{array}\right) = \left(\begin{array}{cc} 9 & 0 \\ 29 & 0 \end{array}\right)\]
+                Matrices can also be used to solve simultaneous equations using a matrix (\(m\)) and it's inverse (\(m^{-1})\). (\(m^{-1})\) can be found through the following process:
+                \[m=\left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \therefore m^{-1} = \frac{1}{ad-bc}\left(\begin{array}{cc} d & -b \\ -c & a \end{array}\right)\]
+                The fraction above is known as the ``determinate". The following example walks through solving a simultaneous equation using matrices:
+                \[3x+5y=1\]
+                \[7x-2y=16\]
+                This can be rearanged into the following:
+                \[\left(\begin{array}{cc} 3 & 5 \\ 7 & -2 \end{array}\right)\left(\begin{array}{c} x \\ y \end{array}\right)=\left(\begin{array}{c} 1 \\ 16 \end{array}\right)\]
+                \[m=\left(\begin{array}{cc} 3 & 5 \\ 7 & -2 \end{array}\right) \hspace{0.5cm} \text{\textit{determinate of} } m=\left(-6-35\right)=-41\]
+                \[ \therefore m^{-1} = \frac{1}{-41} \left(\begin{array}{cc} -2 & -5 \\ -7 & 3 \end{array}\right)\]
+                Multiplying both sides of our matrix equation by the inverse of \(m\) results in the following:
+                \[\left(\begin{array}{c} x \\ y \end{array}\right) = \frac{1}{-41} \left(\begin{array}{cc} -2 & -5 \\ -7 & 3 \end{array}\right) \left(\begin{array}{c} 1 \\ 16 \end{array}\right)\]
+                \[\left(\begin{array}{c} x \\ y \end{array}\right) = \frac{1}{-41} \left(\begin{array}{c} -82 \\ 41 \end{array}\right)\]
+                \[x=2 \hspace{0.3cm} \& \hspace{0.2cm} y=-1\]
+                \subsection{Matrix Transformations}
+                        It makes things easy to imagine that a transformation matrix maps the unit square of the transformed plane, which is why the identity matrix, below,  has no effect, it maps the corners of our unit square to the same place.
+                        \[\left(\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right)\]
+                        And this is an example of a transformation matrix that rotates the axis \(\frac{\pi}{2}\) anticlockwise:
+                        \[\left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right)\]
+                        The determinate of a transformation matrix is its area scale factor. \\ but what if one wants to rotate a matrix through any arbitrary angle, the general rotation matrix, below, rotates a matrix through any angle \(\theta\) clockwise.
+                        \[\left(\begin{array}{cc} \cos\left(\theta\right) & -\sin\left(\theta\right) \\ \sin\left(\theta\right) & \cos\left(\theta\right) \end{array}\right)\]
+                        When combining Matrix transformations, they occur in reverse order. for example, applying transformation matrices \(A\) and \(B\) to matrix \(m\) in the order \(ABm\) applyies the transformations \(B\), followed by \(A\).
 
 \section{Complex Numbers}
                 If the complex numbers \(z_1\) and \(z_2\) are equal, then it follows that \(Re\left(z_1\right) = Re\left(z_2\right)\) and \(Im\left(z_1\right) = Im\left(z_2\right)\). as demonstarated bellow: \\\\
@@ -25,8 +50,8 @@
                 \[\left(a-c\right)^2=\left(b-d\right)^2i^2 \rightarrow \left(a-c\right)^2=-\left(d-b\right)^2\]
                 \[\left(a-c\right)^2\geq 0 \& -\left(d-b\right)^2\leq 0\]
                 the only overlap here is 0. \\\\
-                therefore, \(Re\left(z_1\right) = Im\left(z_2\right).
-                \subsection{Modulus & Argument of Complex Numbers}
+                therefore, \(Re\left(z_1\right) = Im\left(z_2\right).\)
+                \subsection{Modulus \& Argument of Complex Numbers}
                 	These values are given when a complex number is represented in the polar form:
                 	\[z=r\left(\cos\left(\theta\right) + i\sin\left(\theta\right)\right)\]
                 	where \(r\) is the modulus and \(\theta\) is the argument. \\\\
