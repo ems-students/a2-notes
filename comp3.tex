@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{geometry}
+
+\title{COMP3}
+\author{Callum O'Brien}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section{Databases \& DBMS}
+
+A database is collection of non-redundant data that are stored and which the database management system is designed to manipulate. A database management system (DBMS) is a software system that enables the definition, creation and maintenance of a database and provides controlled access to this database.
+
+In a \textit{file-based approach}, these data are stored in a computer file called a flat file. In such a database, the only way to change the record structure of these files is to read the file of records using the old file structure and save the records to a new file using the new record stucture. The file-based approach has many disadvantages;\begin{enumerate}
+    \item \textbf{Data inconsistency:} If there are two adresses for one person, the error in one is not `spotted.'
+    \item \textbf{Data redundancy:} If someone rents a car more than once their details are stored many times
+    \item \textbf{Inefficiency:} Typing in the adresses and other details every time a car is rented is time-consuming and takes up storage space
+    \item \textbf{Difficult to maintain:} As more records are added the database may need to query and manipulate large amounts of data. This is more difficult using the file-based approach
+    \item \textbf{Program-data dependence:} Because the file structure has not been defined in an accessible way, every computer program has to specify exactly what data fields constitute a record in the file being processed. If the data structure changes, programs also have to be changed to match the new structure.
+\end{enumerate}
+
+\noindent Relational databases provide an advantage over the file-based approach. Relational databases contain many \textit{tables} that are linked together. This linking is done by \textit{keys} -- these are common pieces of information that are shared between tables. In a relational database, the DBMS creates and maintains the \textit{data dictionary}. \textit{Data definition language} is used to create tables. It records the attributes, data types, validation used and realtionship between entities. It defines which atttributes belong to which tables. It also creates users and grants access rights to them. DDL commands are;\begin{enumerate}
+    \item \textbf{CREATE DATABASE}
+    \item \textbf{CREATE TABLE}
+    \item \textbf{CREATE USER}
+    \item \textbf{GRANT}
+    \item \textbf{DROP}
+\end{enumerate}
+
+\noindent \textit{Data Manipulation Language} is used to add data to the database and manipulate those data. DML commands are\begin{enumerate}
+    \item \textbf{INSERT}
+    \item \textbf{UPDATE}
+\end{enumerate}
+
+Database schema are different `views' of a database. These can be\begin{enumerate}
+    \item \textbf{External / User Schema:} the way in which each user sees the database, there may be several different schema representing each user's view.
+    \item \textbf{Conceptual or Logical Schema:} describes the entities, attributes and relationships
+    \item \textbf{Internal Schema:} describes how the data will be stored and how they will be accessed and updated.
+\end{enumerate}
+
+\subsection{Entity Relationship Diagrams}
+
+Entities in a database are tables or users. In an ER diagram, they are represented by rectangles. Relationships between entities are lines connecting entities. They can be;\begin{enumerate}
+    \item One-to-one (e.g. $y=x$)
+    \item One-to-many (e.g. $y=\pm\sqrt x$)
+    \item Many-to-one (e.g. $y=\sin x$)
+    \item Many-to-many (e.g. $y^2=1-x^2$)
+\end{enumerate}
+
+\end{document}
