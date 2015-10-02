@@ -13,36 +13,21 @@
 \tableofcontents
 \newpage
 
-\section{Parametric Equations}
+\section{Parametric Curves}
 
-A parametric equation is one in the form;
-\[x=f(t),y=g(t)\]
-\noindent To convert them to cartesian form ($y=h(x)$), one can rearrange to the form;
-\[t=f^{-1}(x),y=g(t)\Rightarrow y=g(f^{-1}(x))\]
+Parametric curves occur when \(x\) and \(y\) are defined in terms of a parameter, a parameter being a value that is the same in both the functions for \(x\) and for \(y\). In a parametric curve \(C\) with parameter \(t\);
 
-\noindent If that doesn't work, try squaring both functions and approach the problem that way.
+\[C:x=f(t),y=g(t)\]
 
-\subsection{Integration}
+\noindent One differentiates a parametric eqution using the chain rule. If we were to differentiate \(y\) with respect to \(x\) by the chain rule, we would find
 
-\[x=f(t),y=g(t)\]
-\[\int_{x=a}^{b}y\,\textrm{d}x=\int_{t=f^{-1}(a)}^{f^{-1}(b)}y\,\frac{\textrm{d}x}{\textrm{d}t}\textrm{d}t\]
+\[\frac{\textrm{d}y}{\textrm{d}x}=\frac{\textrm{d}y}{\textrm{d}t}\frac{\textrm{d}t}{\textrm{d}x}=\frac{f'(t)}{g'(t)}\]
 
-\subsubsection{Example}
-Given $x=t^2$ and $y=2t(3-t)$, evalulate:
-\[\int_{x=0}^9y\,\textrm{d}x\]
+\noindent Integration of parametric curves is done by integrating with respect to \(t\). If one has to integrate with respect to something else, one can tranform it hence;
 
-\begin{eqnarray}
-	\int_{x=0}^9y\,\textrm{d}x=\int_{t=0}^3y\,\frac{\textrm{d}x}{\textrm{d}t}\textrm{d}t\\
-	\frac{\textrm{d}x}{\textrm{d}t}=\frac{\textrm{d}}{\textrm{d}t}t^2=2t
-\end{eqnarray}
+\[\int_{f(t)=a}^{b}g(t)\textrm{d}f(t)=\int_{t=f^{-1}(a)}^{b}g(t)f'(t)\textrm{d}t\]
 
-Hence
-
-\begin{eqnarray}
-	\int_{x=0}^9y\,\textrm{d}x=\int_{t=0}^34t^2(3-t)\textrm{d}t=t^3(4-t)|_{t=0}^3=108-81=27
-\end{eqnarray}
-
-\noindent \textbf{TL;DR} Multiply by $\frac{\textrm{d}x}{\textrm{d}t}$ then integrate with respect to $t$
+\noindent This is then isomorphic to integration of non-parametric curves.
 
 \section{Implicit Differentiation}
 
