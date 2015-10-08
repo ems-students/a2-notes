@@ -1,126 +1,218 @@
-\documentclass{article}
-\usepackage{amssymb}
-\usepackage{geometry}
-\usepackage[round]{natbib}
+% Copyright (c) 2015 William Bevington, Callum O'Brien and Alex Pace
 
-\title{Statistics 3 Notes}
-\author{Will Bevington \and Alex Pace}
+% Permission is granted to copy, distribute and/or modify this document
+% under the terms of the GNU Free Documentation License, Version 1.3
+% or any later version published by the Free Software Foundation;
+% with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+\documentclass{article}
+
+\usepackage{amssymb}
+
+\usepackage{geometry}
+
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
 
 \begin{document}
-	\maketitle
-    \tableofcontents
-    \newpage
-    %---------------------------------------------------------------------------------------------------------------------------
-	\section{Combining Random Variables}
-		\textit{X} and \textit{Y} are two independent random variables with means \textit{E(X)} and \textit{E(Y)}, and variables \textit{Var(X)} and \textit{Var(Y)} \\\\ 
-        Our aim is to find: \textit{E(X$\pm$Y)} and \textit{Var(X$\pm$Y)} \\
-		\begin{center}
-        		$E(X\pm Y) = E(X) \pm E(Y) $ \\ $Var(X\pm Y) = Var(X) + Var(Y)$
-        	\end{center}
-        $E(aX + b) = aE(X) + b \\ Var(aX + b) = a^2Var(X) + b$ \\\\ These last two formulas should be recalled from S1. We can combine these last four formulas to acquire:
-        	\begin{center}
-			$E(aX\pm bY) = aE(X)\pm bE(y)$ \\ $Var(aX\pm bY) = a^2Var(X)+b^2E(Y)$
-		\end{center}
-        	The combination of two independent Normal distributions is also a Normal distribution, and can be expressed thus: \\\\
-        $X~N(\mu x , \sigma^2x)$ \\ $Y~N(\mu y , \sigma^2 y)$
-        	\begin{center}
-			$aX\pm bY~N(a\mu x\pm b\mu y , a^2\sigma x^2+b^2\sigma y^2)$
-		\end{center}
-	\section{Sampling Frames}
-		\subsection{Key Words}
-			\begin{description}
-				\item{Population} The whole set of items that are of interest.
-                                \item{Census} Observes or measures every memeber of a population.
-                                \item{Sample Survey} A selection of observations taken from a subset of the population which is used to find out information about the population as a whole.
-                                \item{Random Sample} A sample in which every possible sample of size $n$ has an equal chance of being selected.
-				\item{Sampling Frame} A list identifying every single sampling unit that could be included in the sample
-		\subsection{Random Sample}
-			\textbf{Random Number Sample} \\
-			Give each sampling unit in the sampling frame a number and use a random number generator or random number tables to select required number of samplng units. \\\\
-			\textbf{Lottery Sample} \\
-			Put the sampling units from the sampling frame into a "hat" and select randomly without replacing. \\\\
-			\textbf{Positives}
-			\begin{itemize}
-				\item Random and free from bias
-				\item Easy to carry out
-			\end{itemize}
-			\textbf{Negatives}
-			\begin{itemize}
-				\item Not suitable for large sample sizes
-			\end{itemize}
-		\subsection{Systematic Sampling}
-			Pick at required intervals from an ordered list.\\
-			e.g. I want a sample of 15 from 60: $\frac{60}{15} = 4$ Therefore, choose a starting point randomly from one of the first four sampling unit from the ordered list, then choose every fourth sampling unit after until you have selected 15. \\\\
-			\textbf{Positives}
-                        \begin{itemize}
-				\item Suitable for large samples
-				\item Is easy to carry out
-                        \end{itemize}
-                        \textbf{Negatives}
-                        \begin{itemize}
-                        	\item Sample is not random unless the ordered list is random
-				\item Can introduce bias
-                        \end{itemize}
-		\subsection{Stratified Sampling}
-			A form of random sampling: The population is split into mutually exclusive groups (strata). Random samples are taken from each strata, the relative size of each corresponds to the same ratio as each strata's representation in the total population. \\\\
-			\textbf{Positives}
-                        \begin{itemize}
-				\item Works well with large samples that can be split into mutually exclusive groups
-				\item Reflects a populations structure
-                        \end{itemize}
-                        \textbf{Negatives}
-                        \begin{itemize}
-                        	\item Takes longer than random sampling
-				\item Within each strata the problems are the same as with any random sample.
-				\item Ill defined strata can overlap (meaning they are no longer mutually exclusive)
-				\item Can't provide accurate data when strata overlap/
-                        \end{itemize}
-		\subsection{Quota Sampling}
-			When no sampling frame is available, quota sampling may be used. The population is divided nto groups (as with sratified sampling). Quotas for each group are created that corrrespond with the groups representation in the total population. The interviewer then selects sampling units until each quota is reached. \\\\
-			\textbf{Positives}
-                        \begin{itemize}
-				\item Administering the test is easy
-				\item Test is low cost
-				\item Test is quick if the sample is small
-                        \end{itemize}
-                        \textbf{Negatives}
-                        \begin{itemize}
-                        	\item Introduces interviewer bias
-				\item Can't estimate sampling errors
- ge{amssymb}
-\usepackage{geometry}
-\usepackage[round]{natbib}
 
-\title{Statistics 3 Notes}
-\author{Will Bevington \and Alex Pace}
+\title{S3}
+\author{Will Bevington \and Callum O'Brien \and Alex Pace}
+\maketitle
+\tableofcontents
 
-                       \end{itemize}
-	\section{Types of Data}
-		\subsection{Primary Data}
-			When you collect data, or someone collects data on your behalf. \\\\
-			\textbf{Positives}
-                        \begin{itemize}
-				\item You have control over the type and method of collection
-				\item The exact data needed is collected
-				\item The Accuracy is known
-                        \end{itemize}
-                        \textbf{Negatives}
-                        \begin{itemize}
-                        	\item Expensive (money and time)
-                        \end{itemize}
-		\subsection{Seconday Data}
-			Second ahnd data, collected by another person or organisation. \\\\
-			\textbf{Positives}
-                        \begin{itemize}
-				\item Cheaper than gathering primary data (time and money)
-				\item Large amounts of data are easily available on the internet
-				\item Access to data over time (trends)
-                        \end{itemize}
-                        \textbf{Negatives}
-                        \begin{itemize}
-                        	\item Bias is not always acknowledged
-				\item Accuracy is not known
-				\item Certain data can be in a form that is difficult to deal with
-                        \end{itemize}		
+\newpage
+
+\section{Combining Random Variables}
+
+Let $X$ and $Y$ be two independent random variables with means $\textrm{E}(X)$ and $\textrm{E}(Y)$ respectively, and variances $\textrm{Var}(X)$ and $\textrm{Var}(Y)$ respectively;
+
+\[\textrm{E}(X\pm Y)=(\textrm{E}X)\pm\textrm{E}(Y)\]
+\[\textrm{Var}(X\pm Y)=\textrm{Var}(X)+\textrm{Var}(Y)\]
+\[\textrm{E}(aX\pm b)=a\textrm{E}(X)\pm b\]
+\[\textrm{Var}(aX\pm b)=a^2\textrm{Var}(X)+b\]
+
+\noindent The latter two formulae should be recalled from S1. We can combine these to acquire:
+
+\[\textrm{E}(aX\pm bY) = a\textrm{E}(X)\pm b\textrm{E}(y)\]
+\[\textrm{Var}(aX\pm bY) = a^2\textrm{Var}(X)+b^2\textrm{Var}(Y)\]
+
+\noindent Additionally, the combination of two independent normal distributions is also a normal distribution;
+
+\[X~N(\mu_x,\sigma_x^2)\]
+\[Y~N(\mu_y,\sigma_y^2)\]
+\[(aX\pm bY)~N(a\mu_x\pm b\mu_y,a^2\sigma_x^2+b^2\sigma_y^2)\]
+
+\section{Sampling Frames}
+
+\begin{description}
+    
+    \item{Population} The whole set of items that are of interest.
+    \item{Census} Observes or measures every memeber of a population.
+    \item{Sample Survey} A selection of observations taken from a subset of the population which is used to find out information about the population as a whole.
+    \item{Random Sample} A sample in which every possible sample of size $n$ has an equal chance of being selected.
+    \item{Sampling Frame} A list identifying every single sampling unit that could be included in the sample
+
+\end{description}
+
+\subsection{Random Sampling}
+
+\subsubsection{Random Number Sample}
+
+Give each sampling unit in the sampling frame a number and use a random number generator or random number tables to select required number of sampling units.
+
+\subsubsection{Lottery Sample}
+
+Put the sampling units from the sampling frame into a "hat" and select randomly without replacing.
+
+\subsubsection{Positives}
+
+\begin{itemize}
+
+    \item Random and free from bias
+    \item Easy to carry out
+
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Not suitable for large sample sizes
+
+\end{itemize}
+
+\subsection{Systematic Sampling}
+
+Pick at required intervals from an ordered list, e.g. I want a sample of 15 from 60: $\frac{60}{15}=4$ therefore choose a starting point randomly from one of the first four sampling unit from the ordered list, then choose every fourth sampling unit after until you have selected 15.
+
+\subsubsection{Positives}
+    
+\begin{itemize}
+
+    \item Suitable for large samples
+    \item Is easy to carry out
+
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Sample is not random unless the ordered list is random
+    \item Can introduce bias
+    
+\end{itemize}
+
+\subsection{Stratified Sampling}
+
+A form of random sampling: The population is split into mutually exclusive groups (strata). Random samples are taken from each strata, the relative size of each corresponds to the same ratio as each strata's representation in the total population. \\\\
+
+\subsubsection{Positives}
+
+\begin{itemize}
+
+    \item Works well with large samples that can be split into mutually exclusive groups
+    \item Reflects a populations structure
+    
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Takes longer than random sampling
+    \item Within each strata the problems are the same as with any random sample.
+    \item Ill defined strata can overlap (meaning they are no longer mutually exclusive)
+    \item Can't provide accurate data when strata overlap
+    
+\end{itemize}
+
+\subsection{Quota Sampling}
+
+When no sampling frame is available, quota sampling may be used. The population is divided nto groups (as with sratified sampling). Quotas for each group are created that corrrespond with the groups representation in the total population. The interviewer then selects sampling units until each quota is reached.
+
+\subsubsection{Positives}
+
+\begin{itemize}
+
+    \item Administering the test is easy
+    \item Test is low cost
+    \item Test is quick if the sample is small
+    
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Introduces interviewer bias
+    \item Can't estimate sampling errors
+    
+\end{itemize}
+
+\section{Types of Data}
+
+\subsection{Primary Data}
+
+When you collect data, or someone collects data on your behalf.
+
+\subsubsection{Positives}
+
+\begin{itemize}
+
+    \item You have control over the type and method of collection
+    \item The exact data needed is collected
+    \item The Accuracy is known
+
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Expensive (money and time)
+    
+\end{itemize}
+
+\subsection{Seconday Data}
+
+Second hand data, collected by another person or organisation.
+
+\subsubsection{Positives}
+        
+\begin{itemize}
+
+    \item Cheaper than gathering primary data (time and money)
+    \item Large amounts of data are easily available on the internet
+    \item Access to data over time (trends)
+    
+\end{itemize}
+
+\subsubsection{Negatives}
+
+\begin{itemize}
+
+    \item Bias is not always acknowledged
+    \item Accuracy is not known
+    \item Certain data can be in a form that is difficult to deal with
+
+\end{itemize}
+
+\section{Estimating Population Parameters using a Sample}
+
+A statistic which is used to estimate a population parameter is called an estimator. A particular value is called an estimation. If $X$ is a random variable then $\textrm{E}(X)$ would be an estimator of the mean. If a statistic $T$ is an estimator for a population parameter $\theta$ and $\textrm{E}(T)=\theta$ then $T$ is an unbiased estimator for $\theta$. Otherwise, the bias of $T$ is given by the expression
+
+\[\textrm{E}(T)-\theta\]
+
+\noindent Estimators for population parameters can be written using ``hat notation,'' wherein an estimator for a population parameter $\theta$ is denoted by $\hat{\theta}$.
+
+\begin{equation}\bar{X}=\frac{1}{n}\sum_iX_i\Rightarrow \textrm{E}(\bar{X})=\mu_X\end{equation}
+
+\begin{equation}S^2=\frac{1}{n-1}\left(\sum_iX^2-n\bar{X}^2\right)\Rightarrow\textrm{E}(S^2)=\sigma_X^2\end{equation}
+
+\paragraph{Proof of (1)} assuming $E(X+Y)=E(X)+E(Y)$,
+\[E(\bar{X})=E\left(\frac{1}{n}\sum_iX_i\right)=\frac{1}{n}E\left(\sum_iX_i\right)\]
+\[E(\bar{X})=\frac{1}{n}\sum_iE(X_i)=\frac{1}{n}n\mu=\mu\]
 
 \end{document}
