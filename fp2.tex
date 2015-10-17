@@ -1,0 +1,125 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{geometry}
+
+\title{Edexcel Advanced Level GCE Mathematics FP2}
+\author{William Bevington \and Callum O'Brien \and Alex Pace}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{de Moivre's Theorem}
+
+de Moivre's theorem states:
+
+\[\text{If } z=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
+
+\[\text{Then } z^n=\left(r\left(\sin\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^n=r^n\left(\cos\left(n\theta\right)+i\sin\left(n\theta\right)\right)\]
+
+\noindent And in the Exponential form:
+
+\[\text{If } z=re^{i\theta}\]
+
+\[\text{Then } z^n=\left(re^{i\theta}\right)^n=r^ne^{i\theta n}\]
+
+\noindent This can be proved through proof by induction by following the following framework:
+
+\begin{itemize}
+\item Prove for \(n=1\).
+\item Assume true for \(n=k\)
+\item Show true for \(n=\left(k+1\right)\)
+\item State conclusion.
+\end{itemize}
+
+\noindent Prove that: \(\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^n = r^n\left(\cos\left(n\theta\right)+i\sin\left(n\theta\right)\right)\) \\\\
+
+\noindent When \(n=1\)
+
+\[\text{LHS } = \left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^1=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
+
+\[\text{RHS } = r^1\left(\cos\left(\left(1\right)\theta\right)+i\sin\left(\left(1\right)\theta\right)\right)=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
+
+\[\text{RHS } = \text{ LHS}\]
+
+\[\rightarrow \text{True when } n=1\]
+
+\noindent Assume true for \(n=k\)
+
+\[\therefore \hspace{0.2in} \left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^k=r^k\left(\cos\left(k\theta\right)+i\sin\left(k\theta\right)\right)\]
+
+\noindent When \(n=\left(k+1\right)\)
+
+\[\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^{k+1}=\]
+
+\[=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\times r^k\left(\cos\left(k\theta\right)+i\sin\left(k\theta\right)\right) = r^{k+1}\left(\cos\left(\left(k+1\right)\theta\right)+i\sin\left(\left(k+1\right)\theta\right)\right)\]
+
+\noindent Given it is true for \(n=\left(k+1\right)\) when it is true for \(n=k\) ad it is true for \(n=1\), by mathematical induction, it is true for all positive \(n\). \\\\
+
+\noindent The proof for negative integers is a little simpler as because we have proofed it for positive intergers, we can assume it works for them before we even begin!.
+
+\begin{itemize}
+\item Let \(n=-m\)
+\item Start with left hand side - rewrite as fraction - apply statement.
+\item Make the denominator real
+\item Simplify \& rearange for the right hand side
+\end{itemize}
+
+\noindent \(n=-m\)
+
+\[z^{-m}=\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^{-m}\]
+
+\[\text{LHS  }=\frac{1}{\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^m}\]
+
+\noindent We have already proved that de Moivre's theorem works for positive integers so we can simplify tis further without having to explain anything:
+
+\[\text{LHS  }=\frac{1}{r^m\left(\cos\left(m\theta\right)+i\sin\left(m\theta\right)\right)}\]
+
+\noindent Make the denominator real by multiplying by the complex conjugate
+
+\[\text{LHS  }\times\frac{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}=\frac{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}{r^m\left(\cos^2\left(m\theta\right)+\sin^2\left(m\theta\right)\right)}\]
+
+\noindent Trigonometric identities tell us that:
+
+\[\cos^2\left(m\theta\right)+\sin^2\left(m\theta\right)=1\]
+
+\noindent and
+
+\[\cos\left(m\theta\right)=\cos\left(-m\theta\right)\]
+\[-\sin\left(m\theta\right)=\sin\left(-m\theta\right)\]
+
+\noindent Applying these to the LHS results in a fraction that is easily manipulated to our RHS:
+
+\[\text{LHS  }=\frac{\left(\cos\left(-m\theta\right)+i\sin\left(-m\theta\right)\right)}{r^m}\]
+
+\[\text{LHS  }=r^{-m}\left(\cos\left(-m\theta\right)+i\sin\left(-m\theta\right)\right)=\text{  RHS}\]
+
+\noindent de Moivre's Theorem is very useful, as it can be applied to simplify complicated looking expressions: \\\\
+
+\noindent \textit{Simplify:}
+
+\[\frac{\left(\cos\left(\frac{9\pi}{17}\right)+i\sin\left(\frac{9\pi}{17}\right)\right)^5}{\left(\cos\left(\frac{2\pi}{17}\right)-i\sin\left(\frac{2\pi}{17}\right)\right)^3}\]
+
+\noindent First we must put the denominator into the correct polar form (with a \(+\) inbetween cos and sin), and then we can apply de Moivre's Theorem.
+
+\[\frac{\left(\cos\left(\frac{9\pi}{17}\right)+i\sin\left(\frac{9\pi}{17}\right)\right)^5}{\left(\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\right)^3}\]
+
+\noindent And now appying de Moivre's Theorem:
+
+\[\frac{\cos\left(\frac{45\pi}{17}\right)+i\sin\left(\frac{45\pi}{17}\right)}{\cos\left(\frac{-6\pi}{17}\right)+i\sin\left(\frac{-6\pi}{17}\right)}\]
+
+\noindent From this point we can easily simplify the complex number down.
+
+\[\cos\left(\frac{51\pi}{17}\right)+i\sin\left(\frac{51\pi}{17}\right)\]
+
+\[\cos\left(3\pi\right)+i\sin\left(3\pi\right)\]
+
+\[\cos\left(\pi\right)+i\sin\left(\pi\right)=-1\]
+
+\end{document}
