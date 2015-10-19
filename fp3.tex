@@ -9,7 +9,18 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+
+\usepackage{array}
+
 \usepackage{geometry}
+
+\usepackage{mathrsfs}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\newcommand{\csch}{\textrm{cosech\:}}
+\newcommand{\sech}{\textrm{sech\:}}
 
 \title{FP3}
 \author{William Bevington \and Callum O'Brien \and Alex Pace}
@@ -22,20 +33,62 @@
 
 \section{Hyperbolic Functions}
 
-The hyperbolic functions are like the trigonometric functions but relating to hyperbola rather than circles
+    \begin{tikzpicture}
 
-\[\sinh z=\frac{e^z-e^{-z}}{2}\]
-\[\cosh z=\frac{e^z+e^{-z}}{2}\]
-\[\tanh z=\frac{\sinh z}{\cosh z}\]
-\[\textrm{csch} z=\frac{1}{\sinh z}\]
-\[\textrm{sech} z=\frac{1}{\cosh z}\]
-\[\textrm{coth} z=\frac{1}{\tanh z}\]
+        \draw [->] (-2.1,0) -- (2.1,0);
+        \draw [->] (0,-2.1) -- (0,2.1);
+        \draw [red, domain=-2:2, samples=100] plot (\x, {0.5 * sinh \x});
 
-\noindent These functions differentiate as you would expect;
+    \end{tikzpicture}
 
-\[\frac{\textrm{d}}{\textrm{d}z}\sinh z=\cosh z\]
-\[\frac{\textrm{d}}{\textrm{d}z}\cosh z=\sinh z\]
-\[\frac{\textrm{d}}{\textrm{d}z}\tanh z=\textrm{sech}^2 z\]
+    \[\begin{array}{*1{>{\displaystyle}r}{>{\displaystyle}l}}
+
+        \sinh: & \left\{x\:|\:x\in\mathbb{R}\right\}\rightarrow\left\{y\:|\:y\in\mathbb{R}\right\} \\
+               & x \mapsto \frac{e^x-e^{-x}}{2} \\
+
+    \end{array}\]
+
+    \[\frac{1}{\sinh x}=\csch x\]
+
+    \[\frac{\textrm{d}}{\textrm{d}x}\sinh x=\cosh x\]
+
+    \begin{tikzpicture}
+    
+        \draw [->] (-2.1,0) -- (2.1,0);
+        \draw [->] (0,-2.1) -- (0,2.1);
+        \draw [red, domain=-2:2, samples=100] plot (\x, {0.5 * cosh \x});
+
+    \end{tikzpicture}
+
+    \[\begin{array}{*1{>{\displaystyle}r}{>{\displaystyle}l}}
+
+        \cosh: & \left\{x\:|\:x\in\mathbb{R}\right\}\rightarrow\left\{y\:|\:y\in\mathbb{R},\:y\geq1\right\} \\
+               & x \mapsto \frac{e^x+e^{-x}}{2} \\
+
+    \end{array}\]
+
+    \[\frac{1}{\cosh x}=\sech x\]
+
+    \[\frac{\textrm{d}}{\textrm{d}x}\cosh x=-\sinh x\]
+
+    \begin{tikzpicture}
+
+        \draw [->] (-2.1,0) -- (2.1,0);
+        \draw [->] (0,-2.1) -- (0,2.1);
+        \draw [red, domain=-2:2, samples=100] plot (\x, {tanh \x});
+
+    \end{tikzpicture}
+
+    \[\begin{array}{*1{>{\displaystyle}r}{>{\displaystyle}l}}
+
+        \tanh: & \left\{x\:|\:x\in\mathbb{R}\right\}\rightarrow\left\{y\:|\:y\in\mathbb{R},\:-1<y<1\right\} \\
+               & x \mapsto \frac{e^x-e^{-x}}{e^x+e^{-x}} \\
+
+    \end{array}\]
+
+    \[\frac{1}{\tanh x}=\coth x\]
+
+    \[\frac{\textrm{d}}{\textrm{d}x}\tanh x=\sech^2 x\]
 
 \end{document}
-                 
+
