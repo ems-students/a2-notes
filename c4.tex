@@ -14,6 +14,9 @@
 \title{C4}
 \author{William Bevington \and Callum O'Brien \and Alex Pace}
 
+\newcommand{\C}{\textit{const.}}
+\newcommand{\dx}{\:\textrm{d}x}
+
 \begin{document}
 
 \maketitle
@@ -49,6 +52,16 @@ Differential equations describe scenarios in which;
 
 \noindent Newton's law of cooling states that the rate of loss of temperature $-\frac{\partial\theta}{\partial t}$ is proportional to the the difference between the temperature $\theta$ of the body and the temperature $\theta_0$ of its surroundings;
 
-\[\frac{\partial\theta}{\partial t}=-k(\theta-\theta_0)\]
+\[\frac{\partial\theta}{\partial t}= -k (\theta - \theta_0)\]
+
+\section{Integrating using Trigonometric Identites}
+
+\subsection{Examples}
+
+\[\int \tan^2 x \dx = \int \left(\sec^2 x - 1\right) \dx = \tan x - x + \C\]
+
+\[\int \sin^2 x \dx = \frac{1}{2} \int \left[1 - \cos\left(2x\right)\right] \dx = \frac{1}{2} x - \frac{1}{4} \sin\left(2x\right) + \C\]
+
+\[\int \sin\left(3x\right) \cos\left(3x\right) = \frac{1}{2} \int \sin\left(6x\right) \dx = -\frac{1}{12} \cos\left(6x\right) + \C \]
 
 \end{document}
