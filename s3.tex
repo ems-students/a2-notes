@@ -209,10 +209,14 @@ A statistic which is used to estimate a population parameter is called an estima
 
 \begin{equation}\bar{X}=\frac{1}{n}\sum_iX_i\Rightarrow \textrm{E}(\bar{X})=\mu_X\end{equation}
 
-\begin{equation}S^2=\frac{1}{n-1}\left(\sum_iX^2-n\bar{X}^2\right)\Rightarrow\textrm{E}(S^2)=\sigma_X^2\end{equation}
+\begin{equation}S^2=\frac{1}{n-1}\left(\sum_iX_i^2-n\bar{X}^2\right)\Rightarrow\textrm{E}(S^2)=\sigma_X^2\end{equation}
 
 \paragraph{Proof of (1)} assuming $E(X+Y)=E(X)+E(Y)$,
 \[E(\bar{X})=E\left(\frac{1}{n}\sum_iX_i\right)=\frac{1}{n}E\left(\sum_iX_i\right)\]
 \[E(\bar{X})=\frac{1}{n}\sum_iE(X_i)=\frac{1}{n}n\mu=\mu\]
+
+\subsection{Standard Error}
+
+If $\bar{x}$ is an estimator of the mean, $\frac{\sigma}{\sqrt n}$ is the standard error. As we probably don't know $\sigma$, use $S$ instead ($\frac{S}{\sqrt n}$). Not that as $n$ increases, the standard error decreases.
 
 \end{document}
