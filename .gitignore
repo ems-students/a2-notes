@@ -1,0 +1,17 @@
+# vim swap files
+*.swp
+
+# LaTeX bobbins
+*.aux
+*.bbl
+*.blg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.lof
+*.log
+*.lot
+*.toc
+
