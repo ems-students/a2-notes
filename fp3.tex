@@ -28,40 +28,67 @@
 \newcommand{\arcosh}{\textrm{arcosh\,}}
 \newcommand{\artanh}{\textrm{artanh\,}}
 
-\title{FP3}
-\author{William Bevington \and Callum O'Brien \and Alex Pace}
-
 \begin{document}
 
+\title{FP3}
+\author{William Bevington \and Callum O'Brien \and Alex Pace}
 \maketitle
 \tableofcontents
 \newpage
 
 \section{Hyperbolic Functions}
 
-The hyperbolic functions are analogs of the ordinary trigonometric, or circular functions. The basic hyperbolic functions are, as one might expect, analygous to sine and cosine; they are hyperbolic sine and hyperbolic cosine.
+The hyperbolic functions are analogs of the ordinary trigonometric, or circular
+functions. The basic hyperbolic functions are, as one might expect, analygous to
+sine and cosine; they are hyperbolic sine and hyperbolic cosine.
 
 \[\sinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \frac{e^x - e^{-x}}{2}\]
 
-\[\cosh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \geq 1\right\} : x \mapsto \frac{e^x + e^{-x}}{2}\]
+\[\cosh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \geq
+1\right\} : x \mapsto \frac{e^x + e^{-x}}{2}\]
 
-\noindent From these one can derive the hyperbolic tangent, hyperbolic secant, hyperbolic cosecant and hyperbolic cotangent functions in much the same way as their circular counterparts.
+\begin{figure}
 
-\[\tanh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \in \left[-1, 1\right]\right\} : x \mapsto \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
+    \begin{tikzpicture}
 
-\[\sech : \mathbb{R} \rightarrow \left\{y \st y \in \mathbb{R},\, y \in \left[0,1\right)\right\} : x \mapsto \frac{2}{e^x + e^{-x}}\]
+        \draw 
 
-\[\csch : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow \left\{y \st y \in \mathbb{R},\, y \neq 0\right\} : x \mapsto \frac{2}{e^x - e^{-x}}\]
+    \end{tikzpicture}
 
-\[\coth : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow \left\{y \st y \in \mathbb{R},\, y \notin \left[-1, 1\right]\right\} : x \mapsto \frac{e^x + e^{-x}}{e^x - e^{-x}}\]
+    \caption[graphs of $\sinh$ and $\cosh$]{The basic hyperbolic functions,
+    $\sinh$ (red) and $\cosh$ (blue).}
 
-\noindent The inverse functions of hyperbolic sine, hyperbolic cosine and hyperbolic tangent are area hyperbolic sine, area hyperbolic cosine and area hyperbolic tangent;
+\end{figure}
 
-\[\arsinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2 + 1}\right)\]
+\noindent From these one can derive the hyperbolic tangent, hyperbolic secant,
+hyperbolic cosecant and hyperbolic cotangent functions in much the same way as
+their circular counterparts.
 
-\[\arcosh : \left\{x \st x \in \mathbb{R},\, x \geq 1 \right\} \rightarrow \mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2 - 1}\right)\]
+\[\tanh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \in
+\left[-1, 1\right]\right\} : x \mapsto \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
 
-\[\artanh : \left\{x \st x \in \mathbb{R},\, x \in \left[-1, 1\right]\right\} \rightarrow \mathbb{R} : x \mapsto \frac{1}{2}\ln\left(\frac{x + 1}{1 - x}\right)\]
+\[\sech : \mathbb{R} \rightarrow \left\{y \st y \in \mathbb{R},\, y \in
+\left[0,1\right)\right\} : x \mapsto \frac{2}{e^x + e^{-x}}\]
 
+\[\csch : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow
+\left\{y \st y \in \mathbb{R},\, y \neq 0\right\} : x \mapsto \frac{2}{e^x -
+e^{-x}}\]
+
+\[\coth : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow
+\left\{y \st y \in \mathbb{R},\, y \notin \left[-1, 1\right]\right\} : x \mapsto
+\frac{e^x + e^{-x}}{e^x - e^{-x}}\]
+
+\noindent The inverse functions of hyperbolic sine, hyperbolic cosine and
+hyperbolic tangent are area hyperbolic sine, area hyperbolic cosine and area
+hyperbolic tangent;
+
+\[\arsinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2
++ 1}\right)\]
+
+\[\arcosh : \left\{x \st x \in \mathbb{R},\, x \geq 1 \right\} \rightarrow
+\mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2 - 1}\right)\]
+
+\[\artanh : \left\{x \st x \in \mathbb{R},\, x \in \left[-1, 1\right]\right\}
+\rightarrow \mathbb{R} : x \mapsto \frac{1}{2}\ln\left(\frac{x + 1}{1 -
 \end{document}
 
