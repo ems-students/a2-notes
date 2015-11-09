@@ -10,6 +10,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\usepackage{tikz}
+
 \usepackage{geometry}
 
 \title{Edexcel Advanced Level GCE Mathematics FP1}
@@ -139,6 +141,93 @@ Let \(z\) be a complex number such that \(z=\cos\left(\theta\right) +i\sin\left(
 Similarly:
 
 \[\frac{e^{i\theta}-e^{-i\theta}}{2i}=\sin\left(\theta\right)\]
+
+\section{Conic Sections}
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.5,yscale=0.5]
+    \draw[thick, domain=-2:2] plot (\x, {2*\x});
+    \draw[thick, domain=-2:2] plot (\x, {-2*\x});
+    \draw[thick] (0,4) ellipse (2 and 1/4);
+    \draw[thick, domain=2:-2] plot (\x, {0.125*(-sqrt(4-(\x*\x))-32)});
+    \draw[thick, dashed] (0,-4) ellipse (2 and 1/4);
+    \draw[olive] (-2,1.75) -- (2,1.75);
+    \draw[olive] (-2,2.25) -- (2,2.25);
+    \draw[cyan] (0,2) ellipse (1 and 1/4);
+    \node at (0,2.8) {1};
+    \draw[olive] (-1.5,-3.8) -- (-1.5,0);
+    \draw[olive] (-0.5,-4.2) -- (-0.5,0);
+    \draw[cyan, domain=-1.5:-0.5] plot (\x, {-6*((\x+1.06)*(\x+1.06))-2.43});
+    \node at (-1,-1) {3};
+\end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.5]
+    \draw[thick, domain=-2:2] plot (\x, {2*\x});
+    \draw[thick, domain=-2:2] plot (\x, {-2*\x});
+    \draw[thick] (0,4) ellipse (2 and 1/4);
+    \draw[thick, domain=2:-2] plot (\x, {0.125*(-sqrt(4-(\x*\x))-32)});
+    \draw[thick, dashed] (0,-4) ellipse (2 and 1/4);
+    \draw[olive] (1.5,-3.8) -- (1.5,3.8);
+    \draw[olive] (0.5,-4.2) -- (0.5,4.2);
+    \draw[cyan, domain=1.5:0.5] plot (\x, {-6*((\x-1.06)*(\x-1.06))-2.43});
+    \draw[cyan, domain=1.5:0.5] plot (\x, {6*((\x-1.06)*(\x-1.06))+2.43});
+    \node at (1,-1) {4};
+    \draw[cyan, rotate=330] (-1.1,1.5) ellipse (1 and 1/4);
+    \draw[olive, rotate=330] (-3.1,1.75) -- (1.1,1.75);
+    \draw[olive, rotate=330] (-3.1,1.25) -- (1.1,1.25);
+    \node at (-1,1) {2};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cccc}
+    1. Circle & 2. Ellipse & 3. Parabola & 4. Hyperbola \\
+\end{tabular}
+\end{center}
+
+\noindent The shapes specified above are known as conic sections as they can be constructed using cross sections of cones.
+
+\subsection{Parabolas}
+
+The general parametric equation of a parabola:
+
+\[y=2at\]
+\[x=at^2\]
+
+\noindent It follows then, that the general cartesian equation of a parabola is:
+
+\[y^2=4ax\]
+
+\noindent The constant, \(a\), of a parabola is of quite some significance. The Focus of the parabola can be described as the point on the x axis who's distance from any point on the parabola is the same as the horizontal distance from that point on the curve and the directrix of a parabola. The focus of a parabola possesses the coordinates \((a,0)\), and the directrix of a parabola is described by the line \(x=-a\). The diagram below illustrates this.
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.25, yscale=0.25]
+    \draw[thick, <->] (0,8) -- (0,-8);
+    \draw[thick, <->] (-3,0) -- (16,0);
+    \draw[olive, dashed] (-1,8) -- (-1,-8);
+    \draw[cyan, domain=0:16] plot (\x, {2*sqrt(\x)});
+    \draw[cyan, domain=0:16] plot (\x, {-2*sqrt(\x)});
+    \draw[red, <-] (-1,6) -- (9,6);
+    \draw[red, ->] (9,6) -- (1,0);
+    \node at (4,7) {d};
+    \node at (5,2) {d};
+    \node at (3,-1) {F: (a,0)};
+    \node[rotate=90] at (-2,5) {directrix};
+    \node[rotate=90] at (-2,-5) {x=-a};
+\end{tikzpicture}
+\end{center}
+
+\noindent The concept of the focus and directrix can be proved through the following process:\\
+
+\noindent General point \(p\) on the curve:
+
+\[p(x,y) \:=\: p\left(at^2,2at\right)\]
+
+\noindent consider a point \(D\) on the directrix, and \(P\) on the curve in the same horizontal plane as \(D\):
+
+\[D\rightarrow P \:=\: a+at^2\]
+\[P\rightarrow F \:=\: \sqrt{\left(at^2-a\right)^2+\left(2at\right)^2} \:=\: \sqrt{a^2t^4-2a^2t^2+a^2=4a^2t^2}\]
+\[\rightarrow\: \sqrt{a^2t^4+2a^2t^2+a^2} \:\rightarrow\: \sqrt{\left(a+at^2\right)^2}\]
+\[\therefore \: P\rightarrow F \:=\: a+at^2\]
+\[\therefore \: P\rightarrow F \:=\: D\rightarrow P\]
 
 \end{document}
 
