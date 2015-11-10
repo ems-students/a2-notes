@@ -11,7 +11,10 @@
 
 \usepackage{geometry}
 
-\usepackage[round]{natbib} \bibliographystyle{plainnat}
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+
+\usepackage{marginnote}
 
 \usepackage{tikz}
 
@@ -20,7 +23,10 @@
 
 \begin{document}
 
-\title{S3} \author{Will Bevington \and Callum O'Brien \and Alex Pace} \maketitle
+\title{S3}
+\author{Will Bevington \and Callum O'Brien \and Alex Pace}
+\maketitle
+
 \tableofcontents
 
 \newpage
@@ -258,13 +264,14 @@ by $\hat{\theta}$.
 
 If $\bar{x}$ is an estimator of the mean, $\frac{\sigma}{\sqrt n}$ is the
 standard error. As we probably don't know $\sigma$, use $S$ instead
-($\frac{S}{\sqrt n}$). Note that as $n$ increases, the standard error decreases.
+$\left(\frac{S}{\sqrt n}\right)$. Note that as $n$ increases, the standard error
+decreases.
 
 \subsection{The Central Limit Theorem}
 
 The central limit theorem states that if $X_1,X_2,\cdots,X_n$ is a random sample
-of size $n$ from population with mean $\mu$ and variance $\sigma^2$, then
-$\bar{X}$ is approximately $~ N \left(\mu, \frac{\sigma^2}{n}\right)$.
+of size $n$ from population with mean $\mu$ and variance $\sigma^2$ and $n$ is
+large, then $\bar{X} ~ N \left(\mu,\frac{\sigma^2}{n}\right)$.
 
 \subsubsection{Worked Example}
 
@@ -296,10 +303,10 @@ P\left(Z > 1.7184\right) = 0.0397\]
 
 \subsection{Calculating Confidence Intervals for a Population Interval}
 
-Typical confidence levels are $99\%$ or $95\%$. A $95\%$ confidence interval is the
-range of outcomes that $95\%$ of your results will fall in. A $95\%$ confidence
-interval for $\mu$ from a sample of size $n$ from a population with mean $\mu$
-and variance $\sigma^2$ is:
+Typical confidence levels are $99\%$ or $95\%$. A $95\%$ confidence interval is
+the range of outcomes that $95\%$ of your results will fall in. A $95\%$
+confidence interval for $\mu$ from a sample of size $n$ from a population with
+mean $\mu$ and variance $\sigma^2$ is:
 
 \[\bar{X} \pm 1.96 \times \frac{\sigma}{\sqrt{n}}\]
 
@@ -314,5 +321,51 @@ and variance $\sigma^2$ is:
     \end{tikzpicture}
 
 \end{figure}
+
+\section{Testing Hypotheses}
+
+\subsection{Differences of Means of two Independent Normal Distributions}
+
+\[X ~ N\left(\mu_X, \sigma_X^2\right)\]
+
+\[Y ~ N\left(\mu_Y, \sigma_Y^2\right)\]
+
+\[X - Y ~ N\left(\mu_X - \mu_Y, \sigma_X^2 + \sigma_Y^2\right)\]
+
+\noindent Taking a sample of $n_X$ from $X$ and $n_Y$ from $Y$ to get $\bar{X},
+\bar{Y}$,
+
+\begin{equation}\bar{X} - \bar{Y} ~ N\left(\mu_X - \mu_Y, \frac{\sigma_X^2}{n_X} +
+\frac{\sigma_Y^2}{n_Y}\right)\end{equation}
+
+\marginnote{If $X$ and $Y$ weren't normally distributed, (3) would still be a
+good approximation if $n_X$ and $n_Y$ were large (by the central limit
+theorem.)}
+
+\noindent This gives the test statistic,
+
+\[Z=\frac{\left(\bar{X} - \bar{Y}\right) - \left(\mu_X - \mu_Y\right)}
+{\sqrt{\frac{\sigma_X^2}{n_X} + \frac{\sigma_Y^2}{n_Y}}}\]
+
+\subsubsection{Example}
+
+\[H_0:\, \mu_X = \mu_Y,\; H_1:\, \mu_X > \mu_Y,\; \alpha = 0.05\]
+
+\[\begin{array}{ccc}
+    
+            & X  & Y \\
+    \bar{X} & 48 & 45 \\
+    \sigma  & 5  & 8 \\
+    n       & 25 & 30 \\
+
+\end{array}\]
+
+\[Z = \frac{\bar{X} - \bar{Y} - (0)}{\sqrt{\frac{25}{25} + \frac{64}{30}}} =
+\frac{3}{\sqrt{3.1333}} = 1.6947\]
+
+\[P\left(Z < a\right) = 0.95 \Rightarrow a = 1.6449,\; 1.6947 > 1.6449\]
+
+\noindent $\therefore$ There is sufficient evidence to reject $H_0$ in favour of
+$H_1$
 
 \end{document}
