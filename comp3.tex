@@ -8,15 +8,25 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+
 \usepackage{amssymb}
+
 \usepackage{amsfonts}
+
+\usepackage{booktabs}
+
+\usepackage{multirow}
+
 \usepackage{geometry}
 
-\title{COMP3}
-\author{Callum O'Brien}
+\usepackage[toc]{glossaries}
+\makeglossaries
+\include{gloss}
 
 \begin{document}
 
+\title{COMP3}
+\author{Callum O'Brien}
 \maketitle
 \tableofcontents
 
@@ -61,8 +71,7 @@ approach. Relational databases contain many \textit{tables} that are linked
 together. This linking is done by \textit{keys} -- these are common pieces of
 information that are shared between tables. In a relational database, the DBMS
 creates and maintains the \textit{data dictionary}. \textit{Data definition
-language} is used to create tables. It records the attributes, data types,
-validation used and realtionship between entities. It defines which atttributes
+language} is used to create tables. It records the attributes, data types, validation used and realtionship between entities. It defines which atttributes
 belong to which tables. It also creates users and grants access rights to them.
 DDL commands are;\begin{enumerate}
 
@@ -102,11 +111,11 @@ be\begin{enumerate}
 
 \end{enumerate}
 
-\subsection{Entity Relationship Diagrams}
+\subsection{Entity Relationships}
 
-Entities in a database are tables or users. In an ER diagram, they are
-represented by rectangles. Relationships between entities are lines connecting
-entities. They can be;\begin{enumerate}
+Entities in a database are tables or users. In an \textit{entity relationship
+diagram}, they are represented by rectangles. Relationships between entities are
+lines connecting entities. They can be;\begin{enumerate}
 
     \item One-to-one (e.g. $y=x$)
     
@@ -117,5 +126,93 @@ entities. They can be;\begin{enumerate}
     \item Many-to-many (e.g. $y^2=1-x^2$)
 
 \end{enumerate}
+
+\subsection{Database Normalisation}
+
+Normalisation is a technique used to produce a normalised set of entities. This
+means that the entities will:\begin{enumerate}
+
+    \item Contain no redundant data
+
+    \item Contain no repeated data
+
+    \item Be able to contain as many or as few tuples as we wish in an entity
+        without requiring us to enter data in another entity as well.
+
+\end{enumerate} The database will now be at its most efficient and there will be
+no risks of compromising the integrity of the data within it.
+
+Databases that are not normalised to third normal form will have problems with
+insertion, deletion and updating anomalies. Database normalisation has been a
+well- developed field since the introduction of Codd's work on normal forms.
+While it's reasonable easy to identify repeating groups or attributes and remove
+these for first normal form, the differences between second and third normal
+form are difficult to secure.
+
+There is a further complication in that repeating groups are understood in
+different ways by different theorists. As a consequence, there is not universal
+agreement as to what constitutes first normal form.
+
+\subsection{Structured Query Language}
+
+SQL is a database language that allows users to create, store, update and
+manipulate data in a database. The first version of SQL was developed at IBM by
+Chamberlin and Boyce in the early 1970s. It was formally standardised in 1986 by
+ANSI.
+
+Almost all modern relational DBMSs use SQL as a standard database language, but
+many use dialects of SQL.
+
+SQL has two subsets, DML and DDL. DDL is used to create the
+database structure (i.e. to define which attributes belong in which tables). It
+also allows you to create users and grant access rights to users.
+
+\begin{table}
+
+    \centering
+
+    \begin{tabular}{ll}
+
+        \toprule
+
+        \multicolumn{2}{c}{DDL} \\
+
+        \midrule
+
+        CREATE DATABASE & Creates a new database \\
+        
+        ALTER DATABASE  & Modifies a database \\
+        
+        CREATE TABLE    & Creates a new table \\
+        
+        ALTER TABLE     & Modifies a table \\
+
+        DROP TABLE      & Deletes a table \\
+        
+        CREATE INDEX    & Creates an index (search key) \\
+        
+        DROP INDEX      & Deletes an index \\
+        
+        GRANT           & Grants permissions on a table \\
+
+        \midrule
+
+        \multicolumn{2}{c}{DML} \\
+
+        \midrule
+        
+        UPDATE          & Updates data in a database \\
+        
+        DELETE          & Deletes data from a database \\
+        
+        INSERT INTO     & Inserts new data into a database \\
+
+        \bottomrule
+
+    \end{tabular}
+
+    \caption{Common DDL and DML commands}
+
+\end{table}
 
 \end{document}
