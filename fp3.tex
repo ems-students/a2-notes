@@ -21,6 +21,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 
+\newcommand{\de}{\textrm{d}\,}
 \newcommand{\st}{\:|\:}
 \newcommand{\csch}{\textrm{csch\,}}
 \newcommand{\sech}{\textrm{sech\,}}
@@ -47,19 +48,6 @@ sine and cosine; they are hyperbolic sine and hyperbolic cosine.
 \[\cosh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \geq
 1\right\} : x \mapsto \frac{e^x + e^{-x}}{2}\]
 
-\begin{figure}
-
-    \begin{tikzpicture}
-
-        \draw 
-
-    \end{tikzpicture}
-
-    \caption[graphs of $\sinh$ and $\cosh$]{The basic hyperbolic functions,
-    $\sinh$ (red) and $\cosh$ (blue).}
-
-\end{figure}
-
 \noindent From these one can derive the hyperbolic tangent, hyperbolic secant,
 hyperbolic cosecant and hyperbolic cotangent functions in much the same way as
 their circular counterparts.
@@ -77,9 +65,7 @@ e^{-x}}\]
 \[\coth : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow
 \left\{y \st y \in \mathbb{R},\, y \notin \left[-1, 1\right]\right\} : x \mapsto
 \frac{e^x + e^{-x}}{e^x - e^{-x}}\]
-
-\noindent The inverse functions of hyperbolic sine, hyperbolic cosine and
-hyperbolic tangent are area hyperbolic sine, area hyperbolic cosine and area
+\noindent The inverse functions of hyperbolic sine, hyperbolic cosine and hyperbolic tangent are area hyperbolic sine, area hyperbolic cosine and area
 hyperbolic tangent;
 
 \[\arsinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2
@@ -90,5 +76,58 @@ hyperbolic tangent;
 
 \[\artanh : \left\{x \st x \in \mathbb{R},\, x \in \left[-1, 1\right]\right\}
 \rightarrow \mathbb{R} : x \mapsto \frac{1}{2}\ln\left(\frac{x + 1}{1 -
+x}\right)\]
+
+\section{Ellipses}
+
+Ellipses are curves that can be simultaneously described as loci or as conic
+sections. When expressed as a parametric equation, ellipses take the form;
+
+\[x = a\cos\theta,\: y = b\sin\theta\]
+
+\noindent Hence;
+
+\[\left(\frac{x}{a}\right)^2 = \cos^2\theta,\: \left(\frac{y}{b}\right)^2 =
+\sin^2\theta\]
+
+\noindent Making apparent an ellipse expressed in cartesian form;
+
+\[\left(\frac{x}{a}\right)^2 + \left(\frac{y}{b}\right)^2 = 1\]
+
+\subsection{Tangents and Normals}
+
+The derivative of an ellipse can be found by implicitly differentiating its
+cartesian form or using the chain rule on its parametric form. By the former
+method;
+
+\[\frac{\de}{\de x} \left(\left(\frac{x}{a}\right)^2 +
+\left(\frac{y}{b}\right)^2\right) = \frac{\de}{\de x}1\]
+
+\[\frac{2x}{a^2} + \frac{2y}{b^2} \times \frac{\de y}{\de x} = 0\]
+
+\[\frac{\de y}{\de x} = -\frac{b^2x}{a^2y}\]
+
+\noindent And by the latter;
+
+\[\frac{\de x}{\de \theta} = -a\sin\theta\]
+
+\[\frac{\de y}{\de \theta} = b\cos\theta\]
+
+\[\frac{\de y}{\de x} = \frac{\de y}{\de \theta} \times \left(\frac{\de x}{\de
+\theta}\right)^{-1} = -\frac{b\cos\theta}{a\sin\theta}\]
+
+\noindent From this we can derive the general equation of a tangent to an
+ellipse at a point $\left(i,\, j\right)$:
+
+\[y - j = -\frac{b^2i}{a^2j}\left(x - i\right)\]
+
+\[a^2jy + b^2ix = \left(aj\right)^2 + \left(bi\right)^2\]
+
+\noindent Similarly, we can derive the equation for a normal:
+
+\[y - j = \frac{a^2j}{b^2i}\left(x - i\right)\]
+
+\[b^2iy + a^2ij = a^2jx + b^2ij\]
+
 \end{document}
 
