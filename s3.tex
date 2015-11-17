@@ -101,8 +101,7 @@ without replacing.
 
 \begin{itemize}
 
-    \item Not suitable for large sample sizes
-
+    \item Not suitable for large sample sizes 
 \end{itemize}
 
 \subsection{Systematic Sampling}
@@ -271,7 +270,7 @@ decreases.
 
 The central limit theorem states that if $X_1,X_2,\cdots,X_n$ is a random sample
 of size $n$ from population with mean $\mu$ and variance $\sigma^2$ and $n$ is
-large, then $\bar{X} ~ N \left(\mu,\frac{\sigma^2}{n}\right)$.
+large, then $\bar{X} \sim N \left(\mu,\frac{\sigma^2}{n}\right)$.
 
 \subsubsection{Worked Example}
 
@@ -294,9 +293,9 @@ probability that $\textit{mean}>3$.
 
 \noindent Thus, by the central limit theorem,
 
-\[\bar{X} ~ N\left(\frac{5}{2}, \frac{13}{4} \times \frac{1}{40}\right)\]
+\[\bar{X} \sim N\left(\frac{5}{2}, \frac{13}{4} \times \frac{1}{40}\right)\]
     
-\[~ N\left(2.5, 0.08125\right)\]
+\[\sim N\left(2.5, 0.08125\right)\]
 
 \[P\left(\bar{X} > 3\right) = P\left(Z > \frac{3 - 2.5}{\sqrt{0.08125}}\right) =
 P\left(Z > 1.7184\right) = 0.0397\]
@@ -326,17 +325,19 @@ mean $\mu$ and variance $\sigma^2$ is:
 
 \subsection{Differences of Means of two Independent Normal Distributions}
 
-\[X ~ N\left(\mu_X, \sigma_X^2\right)\]
+\[X \sim N\left(\mu_X, \left(\sigma_X\right)^2\right)\]
 
-\[Y ~ N\left(\mu_Y, \sigma_Y^2\right)\]
+\[Y \sim N\left(\mu_Y, \left(\sigma_Y\right)^2\right)\]
 
-\[X - Y ~ N\left(\mu_X - \mu_Y, \sigma_X^2 + \sigma_Y^2\right)\]
+\[X - Y \sim N\left(\mu_X - \mu_Y, \left(\sigma_X\right)^2 +
+\left(\sigma_Y\right)^2\right)\]
 
 \noindent Taking a sample of $n_X$ from $X$ and $n_Y$ from $Y$ to get $\bar{X},
 \bar{Y}$,
 
-\begin{equation}\bar{X} - \bar{Y} ~ N\left(\mu_X - \mu_Y, \frac{\sigma_X^2}{n_X} +
-\frac{\sigma_Y^2}{n_Y}\right)\end{equation}
+\begin{equation}\bar{X} - \bar{Y} \sim N\left(\mu_X - \mu_Y,
+        \frac{\left(\sigma_X\right)^2}{n_X} +
+\frac{\left(\sigma_Y\right)^2}{n_Y}\right)\end{equation}
 
 \marginnote{If $X$ and $Y$ weren't normally distributed, (3) would still be a
 good approximation if $n_X$ and $n_Y$ were large (by the central limit
@@ -344,8 +345,9 @@ theorem.)}
 
 \noindent This gives the test statistic,
 
-\[Z=\frac{\left(\bar{X} - \bar{Y}\right) - \left(\mu_X - \mu_Y\right)}
-{\sqrt{\frac{\sigma_X^2}{n_X} + \frac{\sigma_Y^2}{n_Y}}}\]
+\[Z = \frac{\left(\bar{X} - \bar{Y}\right) - \left(\mu_X - \mu_Y\right)}
+{\sqrt{\frac{\left(\sigma_X\right)^2}{n_X} +
+\frac{\left(\sigma_Y\right)^2}{n_Y}}}\]
 
 \subsubsection{Example}
 
@@ -353,10 +355,10 @@ theorem.)}
 
 \[\begin{array}{ccc}
     
-            & X  & Y \\
-    \bar{X} & 48 & 45 \\
-    \sigma  & 5  & 8 \\
-    n       & 25 & 30 \\
+                         & X  & Y \\
+    \textit{sample mean} & 48 & 45 \\
+    \sigma               & 5  & 8 \\
+    n                    & 25 & 30 \\
 
 \end{array}\]
 
