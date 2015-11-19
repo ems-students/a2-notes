@@ -64,9 +64,7 @@ file-based approach has many disadvantages;\begin{enumerate}
         processed. If the data structure changes, programs also have to be
         changed to match the new structure.
 
-\end{enumerate}
-
-\noindent Relational databases provide an advantage over the file-based
+\end{enumerate} Relational databases provide an advantage over the file-based
 approach. Relational databases contain many \textit{tables} that are linked
 together. This linking is done by \textit{keys} -- these are common pieces of
 information that are shared between tables. In a relational database, the DBMS
@@ -87,7 +85,7 @@ DDL commands are;\begin{enumerate}
 
 \end{enumerate}
 
-\noindent \textit{Data Manipulation Language} is used to add data to the
+\textit{Data Manipulation Language} is used to add data to the
 database and manipulate those data. DML commands are\begin{enumerate}
 
     \item \textbf{INSERT}
@@ -97,7 +95,7 @@ database and manipulate those data. DML commands are\begin{enumerate}
 \end{enumerate}
 
 Database schema are different `views' of a database. These can
-be\begin{enumerate}
+be \begin{enumerate}
 
     \item \textbf{External / User Schema:} the way in which each user sees the
         database, there may be several different schema representing each user's
@@ -214,5 +212,16 @@ also allows you to create users and grant access rights to users.
     \caption{Common DDL and DML commands}
 
 \end{table}
+
+\section{Hashing}
+
+A hash function maps from an input $x$ to an output $y$ in a manner requiring
+(relatively) little processing power, but such that $y$ can not be mapped to $x$
+without significantly more processing. Hash functions are many-to-one; an ideal
+hash function has no inverse. 
+
+A collision occurs when $x_n$ and $x_m$ map to the same $y$. Collisions can be
+resolved by mapping $x_m$ to the next available $y$. This approach can be
+ineffective, as it may ultimately lead to more collisions.
 
 \end{document}
