@@ -1,5 +1,4 @@
 % Copyright (c) 2015 William Bevington, Callum O'Brien and Alex Pace
-
 % Permission is granted to copy, distribute and/or modify this document
 % under the terms of the GNU Free Documentation License, Version 1.3
 % or any later version published by the Free Software Foundation;
@@ -7,9 +6,7 @@
 
 \documentclass{article}
 
-\usepackage{amsmath}
-
-\usepackage{amssymb}
+\usepackage{amsmath, amssymb, marginnote}
 
 \usepackage{geometry}
 
@@ -57,7 +54,7 @@ Generally,
 
 \subsection{Capacitors}
 
-% capacitor circuit diagram symbol
+% capacitor circuit diagram symbol pls
 
 Capacitors are a way to store energy/charge. The energy is stored in the electric field inbetween the two plates.
 
@@ -100,5 +97,24 @@ A solenoid is a coil of wire. Given $n>\frac{1}{\pi}$
     \item $n$ is the number of coils
 
 \end{itemize}
+
+\subsection{Root Mean Square}
+
+\[V = A \sin \left(\omega t\right)\]
+
+\[V^2 = A^2 \sin^2 \left(\omega t\right)\]
+
+\[\bar{V}^2 = \frac{V^2}{2} = \frac{A^2}{2}\]
+
+\[\bar{V} = \frac{V}{\sqrt{2}}\]
+
+\marginnote{$\bar{V}$ can be written as $V_\textrm{rms}$}
+
+\[\bar{V} = I \times R\]
+
+\[\bar{P} = \bar{V} \times I\]
+
+Don't always use root mean square though, for things like fuses use the peak
+value.
 
 \end{document}
