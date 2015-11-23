@@ -78,10 +78,25 @@ hyperbolic tangent;
 \rightarrow \mathbb{R} : x \mapsto \frac{1}{2}\ln\left(\frac{x + 1}{1 -
 x}\right)\]
 
-\section{Ellipses}
+\section{Conic Sections}
 
-Ellipses are curves that can be simultaneously described as loci or as conic
-sections. When expressed as a parametric equation, ellipses take the form;
+All conic sections can be described in terms of loci; for any point $P$ on a
+conic section,
+
+\[\frac{|PM|}{|PS|} = e\]
+
+\noindent where $e$ is the eccentricity, $S$ is the focus and $M$ is the closest point to
+$P$ that lies on the directrix.
+
+\[0 \leq e < 1 \Rightarrow P \textrm{ describes an ellipse}\]
+\[e = 1 \Rightarrow P \textrm{ describes a parabola}\]
+\[e > 1 \Rightarrow P \textrm{ describes a hyperbola}\]
+
+\subsection{Ellipses}
+
+Ellipses are conic sections with eccentricty $e \in [0,1)$. Considering their
+geometry, it is clear that, when expressed as a parametric equation, ellipses
+take the form;
 
 \[x = a\cos\theta,\: y = b\sin\theta\]
 
@@ -94,11 +109,28 @@ sections. When expressed as a parametric equation, ellipses take the form;
 
 \[\left(\frac{x}{a}\right)^2 + \left(\frac{y}{b}\right)^2 = 1\]
 
-\subsection{Tangents and Normals}
+\paragraph{Theorem} For $e \in [0,1)$, an ellipse of focus $(ae, 0)$ and
+directrix $x = \frac{a}{e}$ is described by the equation;
 
-The derivative of an ellipse can be found by implicitly differentiating its
-cartesian form or using the chain rule on its parametric form. By the former
-method;
+\[\left(\frac{x}{a}\right)^2 + \left(\frac{y}{b}\right)^2 = 1\]
+
+\paragraph{Proof} 
+
+\[\frac{|PS|^2}{|PM|^2} = e \Rightarrow |PS|^2 = e^2|PM|^2\]
+
+\noindent By pythagoras,
+
+\[|PS|^2 = \left(x - ae\right)^2 + y^2\]
+
+\[|PM|^2 = \left(\frac{a}{e} - x\right)^2 + y^2\]
+
+\noindent Thus
+
+\[\left(x - ae\right)^2 + y^2 = \left(\frac{a}{e} - x\right)^2e^2\]\\
+
+\noindent The derivative of an ellipse can be found by implicitly
+differentiating its cartesian form or using the chain rule on its parametric
+form. By the former method;
 
 \[\frac{\de}{\de x} \left(\left(\frac{x}{a}\right)^2 +
 \left(\frac{y}{b}\right)^2\right) = \frac{\de}{\de x}1\]
