@@ -249,7 +249,6 @@ by $\hat{\theta}$.
 
 \begin{equation}\bar{X}=\frac{1}{n}\sum_iX_i\Rightarrow
 \textrm{E}(\bar{X})=\mu_X\end{equation}
-
 \begin{equation}S^2=\frac{1}{n-1}\left(\sum_iX_i^2-n\bar{X}^2\right)\Rightarrow
 \textrm{E}(S^2)=\sigma_X^2\end{equation}
 
@@ -369,5 +368,18 @@ theorem.)}
 
 \noindent $\therefore$ There is sufficient evidence to reject $H_0$ in favour of
 $H_1$
+
+\section{Goodness of Fit \& the $\chi^2$ Distribution}
+
+\[X^2 = \sum_i \frac{\left(O_i - E_i\right)^2}{E_i}\] \[= \sum_i
+\frac{\left(O_i\right)^2 - 2O_iE_i + \left(E_i\right)^2}{E_i}\] \[= \sum_i
+\left(\frac{\left(O_i\right)^2}{E_i} - 2O_i + E_i\right)\] \[= \sum_i
+\frac{\left(O_i\right)^2}{E_i} - 2\sum_iO_i + \sum_iE_i\] \[\sum_i O_i = \sum_i
+E_i = N\] hence \[X^2 = \sum_i \frac{\left(O_i\right)^2}{E_i} - N\] where
+\[N = \textit{N.o. degrees of freedom} = \textit{N.o. cells} - \textit{N.o.
+contraints}\]
+
+\marginnote{$X^2$ is approximated well be $\chi^2$ if none of the expected
+values fall below five.}
 
 \end{document}
