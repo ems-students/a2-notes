@@ -1,11 +1,17 @@
 \documentclass{article}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsmath, amssymb, geometry, multicol, tikz}
+\usetikzlibrary{arrows, decorations.markings}
 
-\usepackage{geometry}
-
-\usepackage{tikz}
+\tikzset
+    { pointy arrow/.style = 
+        { decoration = 
+            { markings
+            , mark=at position 1 with {\arrow[scale=1, >=latex] {>}}
+            }
+        , postaction = {decorate} 
+        }
+    }
 
 \title{Edexcel Advanced Level GCE Mathematics FP2}
 \author{William Bevington \and Callum O'Brien \and Alex Pace}
@@ -102,13 +108,15 @@ de Moivre's theorem states:
 
 \[\text{LHS  }=r^{-m}\left(\cos\left(-m\theta\right)+i\sin\left(-m\theta\right)\right)=\text{  RHS}\]
 
-\noindent de Moivre's Theorem is very useful, as it can be applied to simplify complicated looking expressions: \\\\
+\noindent de Moivre's Theorem is very useful, as it can be applied to simplify
+complicated looking expressions: \\\\
 
 \noindent \textit{Simplify:}
 
 \[\frac{\left(\cos\left(\frac{9\pi}{17}\right)+i\sin\left(\frac{9\pi}{17}\right)\right)^5}{\left(\cos\left(\frac{2\pi}{17}\right)-i\sin\left(\frac{2\pi}{17}\right)\right)^3}\]
 
-\noindent First we must put the denominator into the correct polar form (with a \(+\) inbetween cos and sin), and then we can apply de Moivre's Theorem.
+\noindent First we must put the denominator into the correct polar form (with a
+\(+\) inbetween cos and sin), and then we can apply de Moivre's Theorem.
 
 \[\frac{\left(\cos\left(\frac{9\pi}{17}\right)+i\sin\left(\frac{9\pi}{17}\right)\right)^5}{\left(\cos\left(\frac{-2\pi}{17}\right)+i\sin\left(\frac{-2\pi}{17}\right)\right)^3}\]
 
@@ -126,24 +134,34 @@ de Moivre's theorem states:
 
 \subsubsection{de Moivre's Theorem and Trigonometric Identities}
 
-de Moivre's Theorem can also be applied to problems consisting of trigonometric functions by using identites and binomial expansion. First though, it is worth noting the following, where \(Z\) is a complex number \(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\)
+de Moivre's Theorem can also be applied to problems consisting of trigonometric
+functions by using identites and binomial expansion. First though, it is worth
+noting the following, where \(Z\) is a complex number
+\(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\)
 
 \[\begin{array}{cc} 
             \vspace{15pt} Z+\frac{1}{Z} \:=\: 2\cos\left(\theta\right) \hspace{10pt} & Z^n+\frac{1}{Z^n} \:=\: 2\cos\left(n\theta\right) \\
             Z-\frac{1}{Z} \:=\: 2i\sin\left(\theta\right) \hspace{10pt} &  Z^n-\frac{1}{Z^n} \:=\: 2i\sin\left(\theta\right)
 \end{array}\]
 
-\noindent Trigonometric functions can be replaced with these arrangements of complex numbers and then manipulated far more easily. The following is an example of such a situation. \\
+\noindent Trigonometric functions can be replaced with these arrangements of
+complex numbers and then manipulated far more easily. The following is an
+example of such a situation. \\
 
 
-\noindent Express \(\sin^3\left(\theta\right)\) in the form \(d\cos\left(4\theta\right)+e\cos\left(2\theta\right)+f\)
+\noindent Express \(\sin^3\left(\theta\right)\) in the form
+\(d\cos\left(4\theta\right)+e\cos\left(2\theta\right)+f\)
 
-\[Z-\frac{1}{Z} \:=\: 2i\sin\left(\theta\right) \;\therefore\; \left(Z^4-\frac{1}{Z^4}\right)^4 \:=\: 16\sin\left(4\theta\right)\]
-\[\left(Z^4-\frac{1}{Z^4}\right)^4 \:=\: Z^4+4Z^3\left(\frac{-1}{Z}\right)+6Z^2\left(\frac{-1}{Z}\right)^2+4Z\left(\frac{-1}{Z}\right)^3+\left(\frac{-1}{Z}\right)^4\]
-\[\rightarrow\: Z^4+4Z^2+6-4Z^{-2}+Z^{-4}\]
-\[\rightarrow\: \left(Z^4+\frac{1}{Z^4}\right)-4\left(Z^2+\frac{1}{Z^2}\right)+6\]
-\[\therefore\: 16\sin^4\left(\theta\right) \:=\: 2\cos\left(4\theta\right)-8\cos\left(2\theta\right)+6\]
-\[\therefore\: \sin^4\left(\theta\right) \:=\: \frac{1}{8}\cos\left(4\theta\right)-\frac{1}{2}\cos\left(2\theta\right)+\frac{3}{8}\]
+\[Z-\frac{1}{Z} \:=\: 2i\sin\left(\theta\right) \;\therefore\;
+\left(Z^4-\frac{1}{Z^4}\right)^4 \:=\: 16\sin\left(4\theta\right)\]
+\[\left(Z^4-\frac{1}{Z^4}\right)^4 \:=\:
+Z^4+4Z^3\left(\frac{-1}{Z}\right)+6Z^2\left(\frac{-1}{Z}\right)^2+4Z\left(\frac{-1}{Z}\right)^3+\left(\frac{-1}{Z}\right)^4\]
+\[\rightarrow\: Z^4+4Z^2+6-4Z^{-2}+Z^{-4}\] \[\rightarrow\:
+\left(Z^4+\frac{1}{Z^4}\right)-4\left(Z^2+\frac{1}{Z^2}\right)+6\]
+\[\therefore\: 16\sin^4\left(\theta\right) \:=\:
+2\cos\left(4\theta\right)-8\cos\left(2\theta\right)+6\] \[\therefore\:
+\sin^4\left(\theta\right) \:=\:
+\frac{1}{8}\cos\left(4\theta\right)-\frac{1}{2}\cos\left(2\theta\right)+\frac{3}{8}\]
 
 \subsubsection{Finding the nth Root of a polynomial Using de Moivre's Theorem}
 
@@ -185,5 +203,41 @@ states \[f(x) \approx f(0) + xf'(0) + \frac{x^2f''(0)}{2} +
 \frac{x^rf^r(0)}{r!}\] Mapping this out to infinite terms gives an exact
 equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
 \frac{x^rf^r(0)}{r!}\]
+
+\section{Polar Coordinates}
+
+\begin{multicols}{2}
+
+    \begin{center}
+
+        \begin{tikzpicture}[scale=1.2]
+
+            \foreach \x in {0, 0.5, ..., 2} \draw[help lines] (0, 0) circle (\x);
+            \draw[help lines, <->] (-2, -2) -- (2, 2);
+            \draw[help lines, <->] (2, -2) -- (-2, 2);
+            \draw[help lines, <->] (0, -2.5) -- (0, 2.5);
+            \draw[help lines, <->] (-2.5, 0) -- (2.5, 0);
+
+            \draw[pointy arrow] (1.2, 0) arc (0:30:1.2);
+            \draw[rotate=15, anchor=west] (1.2, 0) node {$\theta$};
+
+            \draw[rotate=30, pointy arrow] (0, 0) -- (1.2, 0);
+            \draw[rotate=30, anchor=south] (0.6, 0) node {$r$};
+
+        \end{tikzpicture}
+
+    \end{center}
+
+    \noindent Points in a space described by polar coordinates are defined in
+    terms of the magnitude and direction of their displacement from the origin.
+    In a two dimensional space, \(\left(r, \theta\right)\) is an arbitrary
+    point, where either \(\theta \in (-pi, \pi\,]\) or \(\theta \in [\,0,
+    2\pi)\). This is equivalent to \((x, y)\), the cartesian form, where \[x =
+    r\cos\theta, \quad y = r\sin\theta\] \[r = \left(x^2 +
+    y^2\right)^{\frac{1}{2}}, \quad \theta = \arctan\frac{y}{x}\] Cartesian
+    equations can therefore be converted into equivalent polar equations and
+    vice versa using these relationships. 
+
+\end{multicols}
 
 \end{document}
