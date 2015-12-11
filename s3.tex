@@ -7,7 +7,11 @@
 
 \documentclass{article}
 
+\usepackage{amsmath}
+
 \usepackage{amssymb}
+
+\usepackage{booktabs}
 
 \usepackage{geometry}
 
@@ -17,6 +21,8 @@
 \usepackage{marginnote}
 
 \usepackage{tikz}
+
+\usepackage{xfrac}
 
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
@@ -376,10 +382,74 @@ $H_1$
 \left(\frac{\left(O_i\right)^2}{E_i} - 2O_i + E_i\right)\] \[= \sum_i
 \frac{\left(O_i\right)^2}{E_i} - 2\sum_iO_i + \sum_iE_i\] \[\sum_i O_i = \sum_i
 E_i = N\] hence \[X^2 = \sum_i \frac{\left(O_i\right)^2}{E_i} - N\] where
-\[N = \textit{N.o. degrees of freedom} = \textit{N.o. cells} - \textit{N.o.
-contraints}\]
+\[N = \textit{N.o. cells}\] \marginnote{$X^2$ is approximated well by $\chi^2$
+if none of the expected values fall below five.}
 
-\marginnote{$X^2$ is approximated well be $\chi^2$ if none of the expected
-values fall below five.}
+\subsection{Degrees of Freedom}
+
+\subsection{Binomial Distribution}
+
+If any $E_i < 5$, these cells, along with the corresponding $O_i$ must be merged
+to avoid this. Then, \[\textit{N.o. degrees of freedom} = N - 2\] if $p$ is
+estimated by calculation and \[\textit{N.o. degrees of freedom} = N - 1\]
+otherwise.
+
+\subsection{Poisson Distribution}
+
+\subsection{Uniform Continuous Distribution}
+
+\subsection{Normal Distribution}
+
+We may suspect that some data are normally distributed if they exhibit the
+characteristic `bell-shaped' curve and/or if roughly $\sfrac{2}{3}$ of the data
+lie within one standard deviation from the mean.
+
+A sample from a population $X \sim N\left(\mu, \sigma^2\right)$ consisting of $n$
+fields has $\nu$ degrees of freedom where \[\nu = 
+\begin{cases} 
+    n - 3 & \quad \text{if } \mu \text{ and } \sigma^2 \text{ are estimated} \\
+    n - 2 & \quad \text{if } \mu \text{ or } \sigma^2 \text{ is estimated} \\
+    n - 1 & \quad \text{otherwise} \\
+\end{cases}\]
+
+\subsubsection{Question (tell me what you think about me)}
+
+During an observation on the height of \oldstylenums{200} male students the
+following data were observed:\begin{table}[h!]
+
+    \centering
+
+    \begin{tabular}{lr}
+
+        \toprule
+
+        Height / cm & Frequency \\
+
+        \midrule
+
+        150-154     & 4 \\
+        155-159     & 6 \\
+        160-164     & 12 \\
+        165-169     & 30 \\
+        170-174     & 64 \\
+        175-179     & 52 \\
+        180-184     & 18 \\
+        185-189     & 10 \\
+        190-194     & 4 \\
+
+        \bottomrule
+
+    \end{tabular}
+
+\end{table}\begin{enumerate}
+
+    \item Test at the \oldstylenums{0.05} level to see if the height of male
+        students could be modelled by a normal distribution with mean
+        \oldstylenums{172} and standard deviation \oldstylenums{6}.
+
+    \item Describe how you would modify this test if the mean and variance were
+        unknown.
+
+\end{enumerate}
 
 \end{document}

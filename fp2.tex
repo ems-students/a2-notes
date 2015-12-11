@@ -135,6 +135,7 @@ de Moivre's Theorem can also be applied to problems consisting of trigonometric 
 
 \noindent Trigonometric functions can be replaced with these arrangements of complex numbers and then manipulated far more easily. The following is an example of such a situation. \\
 
+
 \noindent Express \(\sin^3\left(\theta\right)\) in the form \(d\cos\left(4\theta\right)+e\cos\left(2\theta\right)+f\)
 
 \[Z-\frac{1}{Z} \:=\: 2i\sin\left(\theta\right) \;\therefore\; \left(Z^4-\frac{1}{Z^4}\right)^4 \:=\: 16\sin\left(4\theta\right)\]
@@ -176,5 +177,13 @@ Solve \(Z^3=1\). Represent Solutions on an argand diagram.
 \end{tikzpicture}
 \end{center}
 
+\section{Polynomial Expansions}
+
+Maclaurin's expansion is a way to fit a polynomial to an arbitrary function. It
+states \[f(x) \approx f(0) + xf'(0) + \frac{x^2f''(0)}{2} +
+    \frac{x^3f'''(0)}{6} + \cdots + \frac{x^nf^n(0)}{n!} = \sum_{r=0}^{n}
+\frac{x^rf^r(0)}{r!}\] Mapping this out to infinite terms gives an exact
+equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
+\frac{x^rf^r(0)}{r!}\]
 
 \end{document}
