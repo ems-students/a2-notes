@@ -13,6 +13,8 @@
         }
     }
 
+\newcommand{\de}{\textrm{d}}
+
 \title{Edexcel Advanced Level GCE Mathematics FP2}
 \author{William Bevington \and Callum O'Brien \and Alex Pace}
 \date{}
@@ -23,95 +25,36 @@
 \tableofcontents
 \newpage
 
-\section{de Moivre's Theorem}
+\section{Complex Numbers}
 
-de Moivre's theorem states:
+\subsection{De Moivre's Theorem}
 
-\[\text{If } z=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
+De Moivre's theorem states \[z = r \left( \cos \theta + i \sin \theta \right)
+\Leftrightarrow z^n = r^n \left( \cos \left( n \theta \right) + i \sin \left( n
+\theta \right) \right)\] Using the exponential form, this is equivalent to \[z =
+    r e^{i \theta} \Leftrightarrow z^n = \left( r e^{i \theta} \right)^n = r^n
+e^{i n \theta}\]
 
-\[\text{Then } z^n=\left(r\left(\sin\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^n=r^n\left(\cos\left(n\theta\right)+i\sin\left(n\theta\right)\right)\]
+\subsubsection{Proof of DMT}
 
-\noindent And in the Exponential form:
+Let $P_n$ be a predicate:\[P_n \Leftrightarrow \left( r \left( \cos \theta + i
+\sin \theta \right) \right)^n = r^n \left( \cos \left( n \theta \right) + i \sin
+\left( n \theta \right) \right)\] Let $n \rightarrow 1$. Evidently, \[P_1
+    \Leftrightarrow r \left( \cos \theta + i \sin \theta \right) = r \left( \cos
+\theta + i \sin \theta) \right)\] thus \[P_1 \text{ is True}\] Assume $P_k$:
+\[\left( r \left( \cos \theta + i \sin \theta \right) \right)^k = r^k \left(
+\cos \left( k \theta \right) + i \sin \left( k \theta \right) \right)\] Now,
+consider $P_{k + 1}$: \[\left( r \left( \cos \theta + i \sin \theta \right)
+    \right)^{k + 1} = r \left( \cos \theta \right) \times r^k \left( \cos \left(
+k \theta \right) + i \sin \left( k \theta \right) \right)\] \[= r^{k +
+    1} \left( \cos \left( \theta \left( k + 1 \right) \right) + i \sin
+    \left( \theta \left( k + 1 \right) \right) \right) \Leftrightarrow
+P_{k + 1}\] therefore \[P_k \Rightarrow P_{k + 1}\] Thus, by induction,
+\[P_n \quad \forall n \in \mathbb{N} n \geq 0\]
 
-\[\text{If } z=re^{i\theta}\]
+\subsubsection{Uses}
 
-\[\text{Then } z^n=\left(re^{i\theta}\right)^n=r^ne^{i\theta n}\]
-
-\noindent This can be proved through proof by induction by following the following framework:
-
-\begin{itemize}
-\item Prove for \(n=1\).
-\item Assume true for \(n=k\)
-\item Show true for \(n=\left(k+1\right)\)
-\item State conclusion.
-\end{itemize}
-
-\noindent Prove that: \(\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^n = r^n\left(\cos\left(n\theta\right)+i\sin\left(n\theta\right)\right)\) \\\\
-
-\noindent When \(n=1\)
-
-\[\text{LHS } = \left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^1=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
-
-\[\text{RHS } = r^1\left(\cos\left(\left(1\right)\theta\right)+i\sin\left(\left(1\right)\theta\right)\right)=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\]
-
-\[\text{RHS } = \text{ LHS}\]
-
-\[\rightarrow \text{True when } n=1\]
-
-\noindent Assume true for \(n=k\)
-
-\[\therefore \hspace{0.2in} \left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^k=r^k\left(\cos\left(k\theta\right)+i\sin\left(k\theta\right)\right)\]
-
-\noindent When \(n=\left(k+1\right)\)
-
-\[\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^{k+1}=\]
-
-\[=r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\times r^k\left(\cos\left(k\theta\right)+i\sin\left(k\theta\right)\right) = r^{k+1}\left(\cos\left(\left(k+1\right)\theta\right)+i\sin\left(\left(k+1\right)\theta\right)\right)\]
-
-\noindent Given it is true for \(n=\left(k+1\right)\) when it is true for \(n=k\) ad it is true for \(n=1\), by mathematical induction, it is true for all positive \(n\). \\\\
-
-\noindent The proof for negative integers is a little simpler as because we have proofed it for positive intergers, we can assume it works for them before we even begin!.
-
-\begin{itemize}
-\item Let \(n=-m\)
-\item Start with left hand side - rewrite as fraction - apply statement.
-\item Make the denominator real
-\item Simplify \& rearange for the right hand side
-\end{itemize}
-
-\noindent \(n=-m\)
-
-\[z^{-m}=\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^{-m}\]
-
-\[\text{LHS  }=\frac{1}{\left(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\right)^m}\]
-
-\noindent We have already proved that de Moivre's theorem works for positive integers so we can simplify tis further without having to explain anything:
-
-\[\text{LHS  }=\frac{1}{r^m\left(\cos\left(m\theta\right)+i\sin\left(m\theta\right)\right)}\]
-
-\noindent Make the denominator real by multiplying by the complex conjugate
-
-\[\text{LHS  }\times\frac{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}=\frac{\left(\cos\left(m\theta\right)-i\sin\left(m\theta\right)\right)}{r^m\left(\cos^2\left(m\theta\right)+\sin^2\left(m\theta\right)\right)}\]
-
-\noindent Trigonometric identities tell us that:
-
-\[\cos^2\left(m\theta\right)+\sin^2\left(m\theta\right)=1\]
-
-\noindent and
-
-\[\cos\left(m\theta\right)=\cos\left(-m\theta\right)\]
-\[-\sin\left(m\theta\right)=\sin\left(-m\theta\right)\]
-
-\noindent Applying these to the LHS results in a fraction that is easily manipulated to our RHS:
-
-\[\text{LHS  }=\frac{\left(\cos\left(-m\theta\right)+i\sin\left(-m\theta\right)\right)}{r^m}\]
-
-\[\text{LHS  }=r^{-m}\left(\cos\left(-m\theta\right)+i\sin\left(-m\theta\right)\right)=\text{  RHS}\]
-
-\noindent de Moivre's Theorem is very useful, as it can be applied to simplify
-complicated looking expressions: \\\\
-
-\noindent \textit{Simplify:}
+DMT is great, because it can be used to simplify expressions like this:
 
 \[\frac{\left(\cos\left(\frac{9\pi}{17}\right)+i\sin\left(\frac{9\pi}{17}\right)\right)^5}{\left(\cos\left(\frac{2\pi}{17}\right)-i\sin\left(\frac{2\pi}{17}\right)\right)^3}\]
 
@@ -132,9 +75,9 @@ complicated looking expressions: \\\\
 
 \[\cos\left(\pi\right)+i\sin\left(\pi\right)=-1\]
 
-\subsubsection{de Moivre's Theorem and Trigonometric Identities}
+\subsubsection{De Moivre's Theorem and Trigonometric Identities}
 
-de Moivre's Theorem can also be applied to problems consisting of trigonometric
+De Moivre's Theorem can also be applied to problems consisting of trigonometric
 functions by using identites and binomial expansion. First though, it is worth
 noting the following, where \(Z\) is a complex number
 \(r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)\)
@@ -163,7 +106,8 @@ Z^4+4Z^3\left(\frac{-1}{Z}\right)+6Z^2\left(\frac{-1}{Z}\right)^2+4Z\left(\frac{
 \sin^4\left(\theta\right) \:=\:
 \frac{1}{8}\cos\left(4\theta\right)-\frac{1}{2}\cos\left(2\theta\right)+\frac{3}{8}\]
 
-\subsubsection{Finding the nth Root of a polynomial Using de Moivre's Theorem}
+\subsubsection{Finding the $n$\textsuperscript{th} Root of a Polynomial Using De
+Moivre's Theorem}
 
 Solve \(Z^3=1\). Represent Solutions on an argand diagram.
 
@@ -182,18 +126,31 @@ Solve \(Z^3=1\). Represent Solutions on an argand diagram.
 \[k=-1 \;\rightarrow\; Z=\cos\left(\frac{-\pi}{3}\right)+i\sin\left(\frac{-\pi}{3}\right)\]
 \[\therefore \; Z \:=\: \frac{1}{2}-\frac{\sqrt{3}}{2}i\]
 
-\begin{center}
-\begin{tikzpicture}[xscale=1.2,yscale=1.2]
-    \draw[thick, <->] (-1.5,0) -- (1.5,0);
-    \draw[thick, <->] (0,1.5) --(0,-1.5);
-    \draw[cyan, ->] (0,0) -- (-1,0);
-    \draw[cyan, ->] (0,0) -- (0.5,0.866);
-    \draw[cyan, ->] (0,0) -- (0.5,-0.866);
-    \node[scale=0.7] at (-1,0.3) {(-1)};
-    \node[scale=0.7] at (0.7,1) {\(\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)\)};
-    \node[scale=0.7] at (0.7,-1) {\(\left(\frac{1}{2}-\frac{\sqrt{3}}{2}i\right)\)};
-\end{tikzpicture}
-\end{center}
+\begin{figure}[h]
+
+    \centering
+
+    \begin{tikzpicture}[xscale=1.2,yscale=1.2]
+
+        \draw[help lines, step=0.5] (-1.4, -1.4) grid (1.4, 1.4);
+        \draw[thick, ->] (-1.5, 0) -- (1.5, 0);
+        \draw[thick, ->] (0, -1.5) --(0, 1.5);
+
+        \draw[red, ->] (0,0) -- (-1,0);
+        \draw[red, ->] (0,0) -- (0.5,0.866);
+        \draw[red, ->] (0,0) -- (0.5,-0.866);
+        
+        \draw[anchor=south] (-1,0) node {\(-1\)};
+        \draw[rotate=60, anchor=west] (1, 0) node {\(\frac{1}{2} +
+        \frac{\sqrt{3}}{2}i\)}; 
+        \draw[rotate=-60, anchor=west] (1, 0) node {\(\frac{1}{2} -
+        \frac{\sqrt{3}}{2}i\)};
+
+    \end{tikzpicture}
+
+    \caption{Third roots of $-1$ shown on an argand diagram} 
+
+\end{figure}
 
 \section{Polynomial Expansions}
 
@@ -230,14 +187,21 @@ equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
 
     \noindent Points in a space described by polar coordinates are defined in
     terms of the magnitude and direction of their displacement from the origin.
-    In a two dimensional space, \(\left(r, \theta\right)\) is an arbitrary
-    point, where either \(\theta \in (-pi, \pi\,]\) or \(\theta \in [\,0,
-    2\pi)\). This is equivalent to \((x, y)\), the cartesian form, where \[x =
-    r\cos\theta, \quad y = r\sin\theta\] \[r = \left(x^2 +
-    y^2\right)^{\frac{1}{2}}, \quad \theta = \arctan\left(\frac{y}{x}\right)\]
-    Cartesian equations can hence be converted into equivalent polar equations
-    and vice versa. 
+    In a two dimensional space, \(\left( r, \theta \right)\) is an arbitrary
+    point, where either \(\theta \in (-pi, \pi \,]\) or \(\theta \in [\, 0, 2
+    \pi)\). This is equivalent to \((x, y)\), the cartesian form, where \[x = r
+    \cos \theta, \quad y = r \sin \theta\] \[r = \left( x^2 + y^2
+        \right)^{\frac{1}{2}}, \quad \theta = \arctan \left( \frac{y}{x}
+    \right)\] Cartesian equations can hence be converted into equivalent polar
+    equations and vice versa. 
 
 \end{multicols}
+
+\section{Differential Equations}
+
+\subsection{First Order Linear Inhomogeneous Ordinary Differential Equations}
+
+First order linear inhomogeneous ordinary differential equations can be
+expressed in the form \[\frac{\de y}{\de x} + P(x)y = Q(x)\]
 
 \end{document}
