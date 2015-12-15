@@ -7,22 +7,10 @@
 
 \documentclass{article}
 
-\usepackage{amsmath}
-
-\usepackage{amssymb}
-
-\usepackage{booktabs}
-
-\usepackage{geometry}
+\usepackage{amsmath, amssymb, booktabs, geometry, marginnote, tikz, xfrac}
 
 \usepackage[round]{natbib}
 \bibliographystyle{plainnat}
-
-\usepackage{marginnote}
-
-\usepackage{tikz}
-
-\usepackage{xfrac}
 
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
@@ -452,4 +440,74 @@ following data were observed:\begin{table}[h!]
 
 \end{enumerate}
 
+\subsection{Contingency Tables}
+
+A contingency table is a way to test whether two variables are independent or
+linked. The null hypothesis is always that the variables are independent.
+
+\subsubsection[Example]{Example: Link between School and Grade}
+
+\begin{table}[h]
+
+    \centering
+
+    \begin{tabular}{lllll}
+
+        \toprule
+
+        Grade       & A     & B     & C     & Total \\
+
+        \midrule
+
+        School X    & 18    & 12    & 20    & 50 \\
+        School Y    & 26    & 12    & 32    & 70 \\
+        Total       & 44    & 24    & 52    & 120 \\
+
+        \bottomrule
+
+    \end{tabular}
+
+    \caption{Observed values}
+
+\end{table}
+
+\[H_0 : \textrm{ School and grade are independent.}\]
+\[H_1 : \textrm{ School and grade are linked.}\]
+
+Assuming $H_0$, we can calculate expected values by multiplying relevant
+probabilities and quantities, as \[A \textrm{ and } B \textrm{ are independent}
+\Leftrightarrow P(A \land B) = P(A) \times P(B)\] giving the following expected
+values:
+
+\begin{table}[h]
+
+    \centering
+
+    \begin{tabular}{llll}
+
+        \toprule
+
+        Grade       & A     & B     & C \\
+
+        \midrule
+
+        School X    & 18.33 & 10.00 & 21.67 \\
+        School Y    & 25.67 & 14.00 & 30.33 \\
+
+        \bottomrule
+
+    \end{tabular}
+
+    \caption{Expected Values}
+
+\end{table}
+
+hence, for these data, \[X^2 = 0.92\]
+
+As these data have two degrees of freedom, the critical value (at significance
+\oldstylenums{0.005}) is given by \[\chi^2_2\left(0.05\right) = 5.99\] which is
+greater than $X^2$. There is therefore insufficient evidence to reject $H_0$,
+i.e. school and grade are independent.
+
 \end{document}
+
