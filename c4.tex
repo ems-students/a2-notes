@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
+\usepackage{tikz}
 
 \title{C4}
 \author{William Bevington \and Callum O'Brien \and Alex Pace}
@@ -63,5 +64,45 @@ Differential equations describe scenarios in which;
 \[\int \sin^2 x \dx = \frac{1}{2} \int \left[1 - \cos\left(2x\right)\right] \dx = \frac{1}{2} x - \frac{1}{4} \sin\left(2x\right) + \C\]
 
 \[\int \sin\left(3x\right) \cos\left(3x\right) = \frac{1}{2} \int \sin\left(6x\right) \dx = -\frac{1}{12} \cos\left(6x\right) + \C \]
+
+\section{Volumes of Revolution}
+
+\begin{center}
+    
+    \begin{tikzpicture}[scale=0.4]
+        
+        \draw[->, thick] (0,0) -- (8,0);
+        \draw[->, thick] (0,0) -- (0,8);
+        
+        \draw[cyan, domain=1:7] plot (\x, {0.1*(\x-4)*(\x-4)*(\x-4)+4});
+        
+        \draw[red] (2,0) -- (2,3.2);
+        \draw[red] (6,0) -- (6,4.8);
+        
+        \node[red] at (4,2) {\(A\)};
+    
+    \end{tikzpicture} \hspace{40pt} \begin{tikzpicture}[xscale=0.4,yscale=0.2]
+        
+        \draw[->, thick] (0,0) -- (8,0);
+        \draw[<->, thick] (0,-8) -- (0,8);
+        
+        \draw[cyan, domain=1:7] plot (\x, {0.1*(\x-4)*(\x-4)*(\x-4)+4});
+        \draw[cyan, domain=1:7] plot (\x, {-0.1*(\x-4)*(\x-4)*(\x-4)-4});
+        
+        \draw[cyan] (7,0)  ellipse (0.5 and 6.7);
+        
+        \draw[red, dashed] (2,0) ellipse (0.2 and 3.2);
+        \draw[red, dashed] (6,0) ellipse (0.3 and 4.8);
+        
+        \node[red] at (4,2) {\(V\)};
+    
+    \end{tikzpicture}
+
+\end{center}
+
+\noindent To calculate the volume if \(y=f(x)\) has been revolved around the x-axis, we can model the volume of that as a cylinder with radius that varies with \(y\). \\
+\(\pi y^2\) would be the `surface area' of a given cross section. Therefore, the following would give you the volume between a point \(a\) and \(b\):
+
+\[\int^b_a\pi y^2dx \;\;\rightarrow\;\; \pi\int^b_ay^2dx\]
 
 \end{document}
