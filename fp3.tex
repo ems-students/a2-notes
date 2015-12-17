@@ -41,42 +41,183 @@
 
 The hyperbolic functions are analogs of the ordinary trigonometric, or circular
 functions. The basic hyperbolic functions are, as one might expect, analygous to
-sine and cosine; they are hyperbolic sine and hyperbolic cosine.
+sine and cosine; they are hyperbolic sine and hyperbolic cosine.\\
+The following graphs plot the various hyperbolic trigonometric functions, allong the left hand side is the hyperbolic function of sin and its counterparts, down the middle hyperbolic cos, and the right hyperbolic tan. The domain and range of each function is also described below their respective graphs.
 
-\[\sinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \frac{e^x - e^{-x}}{2}\]
+\begin{center}
+    
+    \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+    
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+    
+        \draw[cyan,domain=-2.4:2.4] plot (\x, {sinh(\x)});
 
-\[\cosh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \geq
-1\right\} : x \mapsto \frac{e^x + e^{-x}}{2}\]
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+    
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
 
-\noindent From these one can derive the hyperbolic tangent, hyperbolic secant,
-hyperbolic cosecant and hyperbolic cotangent functions in much the same way as
-their circular counterparts.
+        \draw[cyan,domain=-2.4:2.4] plot (\x, {cosh(\x)});
 
-\[\tanh : \mathbb{R} \rightarrow \left\{x \st x \in \mathbb{R},\, x \in
-\left[-1, 1\right]\right\} : x \mapsto \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+    
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+    
+        \draw[cyan,domain=-2.4:2.4] plot (\x, {tanh(\x)});
 
-\[\sech : \mathbb{R} \rightarrow \left\{y \st y \in \mathbb{R},\, y \in
-\left[0,1\right)\right\} : x \mapsto \frac{2}{e^x + e^{-x}}\]
+    \end{tikzpicture}
 
-\[\csch : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow
-\left\{y \st y \in \mathbb{R},\, y \neq 0\right\} : x \mapsto \frac{2}{e^x -
-e^{-x}}\]
+\end{center}
 
-\[\coth : \left\{x \st x \in \mathbb{R},\, x \neq 0 \right\} \rightarrow
-\left\{y \st y \in \mathbb{R},\, y \notin \left[-1, 1\right]\right\} : x \mapsto
-\frac{e^x + e^{-x}}{e^x - e^{-x}}\]
-\noindent The inverse functions of hyperbolic sine, hyperbolic cosine and hyperbolic tangent are area hyperbolic sine, area hyperbolic cosine and area
-hyperbolic tangent;
+\hspace{5pt} \begin{tabular}{lll}
+    
+    \(\sinh(x)\) \hspace{100pt} & \(\cosh(x)\) \hspace{100pt} & \(\tanh(x)\) \\
+    
+    \textbf{Domain} \(\left\{x\in\mathbb{R}\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\right\}\) \\
+    
+    \textbf{Range} \(\left\{y\in\mathbb{R}\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\,|\,y\geq1\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\,|\,-1<y<1\right\}\)
 
-\[\arsinh : \mathbb{R} \rightarrow \mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2
-+ 1}\right)\]
+\end{tabular}
 
-\[\arcosh : \left\{x \st x \in \mathbb{R},\, x \geq 1 \right\} \rightarrow
-\mathbb{R} : x \mapsto \ln\left(x + \sqrt{x^2 - 1}\right)\]
+\begin{center}
+    
+    \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+            
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=-2.4:-0.2] plot (\x, {1/sinh(\x)});
+        \draw[cyan,domain=0.2:2.4] plot (\x, {1/sinh(\x)});
+    
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+        
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=-2.4:2.4] plot (\x, {1/cosh(\x)});
+    
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+        
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=-2.4:-0.2] plot (\x, {1/tanh(\x)});
+        \draw[cyan,domain=0.2:2.4] plot (\x, {1/tanh(\x)});
+    
+    \end{tikzpicture}
 
-\[\artanh : \left\{x \st x \in \mathbb{R},\, x \in \left[-1, 1\right]\right\}
-\rightarrow \mathbb{R} : x \mapsto \frac{1}{2}\ln\left(\frac{x + 1}{1 -
-x}\right)\]
+\end{center}
+
+\hspace{5pt} \begin{tabular}{lll}
+    
+    \textrm{csch(x)} \hspace{100pt} & \textrm{sech(x)} \hspace{100pt} & \textrm{coth(x)} \\
+    
+    \textbf{Domain} \(\left\{x\in\mathbb{R}\,|\,x\neq0\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\,|\,x\neq0\right\}\) \\
+    
+    \textbf{Range} \(\left\{y\in\mathbb{R}\,|\,y\neq0\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\,|\,0<y<1\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\,|\,y<-1\textrm{ or }y>1\right\}\)
+
+\end{tabular}
+
+\begin{center}
+    
+    \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+        
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=-2.4:2.4] plot (\x, {ln(\x+sqrt(1+\x*\x))});
+    
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+        
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=1:2.4] plot (\x, {ln(\x+sqrt(\x+1)*sqrt(\x-1))});
+    
+    \end{tikzpicture} \hspace{50pt} \begin{tikzpicture}[xscale=0.5,yscale=0.25]
+        
+        \draw[<->] (-3,0) -- (3,0);
+        \draw[<->] (0,6) -- (0,-6);
+        
+        \draw[cyan,domain=-0.99999:0.99999] plot (\x, {0.5*(ln(1+\x)-ln(1-\x))});
+    
+    \end{tikzpicture}
+
+\end{center}
+
+\hspace{5pt} \begin{tabular}{lll}
+    
+    \(\sinh^{-1}(x)\) \hspace{85pt} & \(\cosh^{-1}(x)\) \hspace{85pt} & \(\tanh^{-1}(x)\) \\
+    
+    \textbf{Domain} \(\left\{x\in\mathbb{R}\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\,|\,x\geq1\right\}\) & \textbf{Domain} \(\left\{x\in\mathbb{R}\,|\,-1<x<1\right\}\) \\
+    
+    \textbf{Range} \(\left\{y\in\mathbb{R}\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\right\}\) & \textbf{Range} \(\left\{y\in\mathbb{R}\right\}\)
+
+\end{tabular}
+
+\subsection{Inverse Hyperbolic Trigonometric Functions}
+
+The inverse of a hyperbolic function reverses the operation of the corresponding trigonometric function. Therefore, these functions can be used to find a certain input of a hyperbolic trigonometric function haven being given its output.
+
+\[\textrm{arsinh}\left(z\right)=\ln\left(z+\sqrt{1+z^2}\right)\]
+
+\noindent this identity can be found through the following process:
+
+\[z=\sinh\left(x\right)\]
+\[z=\frac{e^x-e^{-x}}{2} \: \rightarrow \: 2z=e^x-e^{-x}\]
+\[2ze^x=e^{2x}-1 \: \rightarrow \: \left(e^x\right)^2-2z\left(e^x\right)-1=0\]
+
+\noindent This should be recognizable as a quadratic equation with \(e^x\) instead of the regular \textrm{x}, the variable \textrm{z} will be considered a constant. \\
+Using the quadratic formula, you should obtain:
+
+\[e^x=z\pm\sqrt{z^2+1}\]
+
+\noindent At this point you should realise that \(e^x\,>\,0\) for all \textrm{x}, and considering \(\sqrt{z^2+1}\,>\, y\), we can discard the solution with the minus sign and then take the natural logarithm of both sides to arrive at our solution for \textrm{x}:
+
+\[e^x=z+\sqrt{z^2+1} \: \rightarrow \: x=\ln\left(z+\sqrt{z^2+1}\right)\]
+
+\noindent similarly, the inverse of \(\cosh\left(x\right)\) is defined thus:
+
+\[\textrm{arcosh}\left(z\right)=\ln\left(z+\sqrt{z+1}\sqrt{z-1}\right)\]
+
+\noindent It is also derived in a similar fashion:
+
+\[z=\cosh\left(x\right)\]
+\[z=\frac{e^x+e^{-x}}{2} \: \rightarrow \: 2z=e^x+e^{-x}\]
+\[2ze^x=e^{2x}+1 \: \rightarrow \: \left(e^x\right)^2-2z\left(e^x\right)+1=0\]
+
+\noindent again this is a quadratic equation which can be solved to find the following:
+
+\[e^x=z\pm\sqrt{z^2-1}\]
+
+\noindent since \(x\geq0\) we know that \(e^x\geq1\) for all \textrm{x}. And since \(z-\sqrt{z^2-1}\) does not exceed \(1\) for some \textrm{y}, we must discard the solution with the minus sign. This leaves us with a difference of two squares which can be sepearted to find all solutions of \textrm{x}.
+
+\[e^x=z+\sqrt{z^2-1} \: \rightarrow \: e^x=z+\sqrt{z+1}\sqrt{z-1}\]
+
+\[x=\ln\left(e^x=z+\sqrt{z+1}\sqrt{z-1}\right)\]
+
+\noindent finally, inverse \(\tanh\left(x\right)\) is defined:
+
+\[\textrm{artanh}\left(z\right)=\frac{1}{2}\left(\ln\left(1+z\right)-\ln\left(1-z\right)\right)\]
+
+\noindent and is derived:
+
+\[z=\tanh\left(x\right)\]
+\[z=\frac{e^x-e^{-x}}{e^x+e^{-x}}=\frac{e^{2x}-1}{e^{2x}+1}\]
+\[\left(e^{2x}+1\right)z=e^{2x}-1 \: \rightarrow \: \left(z-1\right)e^{2x}+z+1=0\]
+
+\noindent solving this quadratic equation yields:
+
+\[e^x=\pm\sqrt{\frac{z+1}{1-z}}\]
+
+\noindent because \(e^x>0\) we must disregard the negative solution. Then from here we can take the natural logarithm of both sides and simplify to find our solution:
+
+\[e^x=\sqrt{\frac{z+1}{1-z}} \: \rightarrow \: x=\ln\left(\sqrt{\frac{z+1}{1-z}}\right)\]
+
+\[x=\frac{1}{2}\ln\left(\frac{z+1}{1-z}\right) \: \rightarrow \: x=\frac{1}{2}\left(\ln\left(1+z\right)-\ln\left(1-z\right)\right)\]
+
 
 \section{Conic Sections}
 
