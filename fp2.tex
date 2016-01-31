@@ -411,7 +411,7 @@ Maclaurin's expansion is a way to fit a polynomial to an arbitrary function. It
 states \[f(x) \approx f(0) + xf'(0) + \frac{x^2f''(0)}{2} +
     \frac{x^3f'''(0)}{6} + \cdots + \frac{x^nf^n(0)}{n!} = \sum_{r=0}^{n}
 \frac{x^rf^r(0)}{r!}\] Mapping this out to infinite terms gives an exact
-equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
+equivalence, called a Maclaurin series; \[f(x) = \sum_{r = 0}^{\infty}
 \frac{x^rf^r(0)}{r!}\]
 
 \section{Polar Coordinates}
@@ -441,7 +441,7 @@ equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
     \noindent Points in a space described by polar coordinates are defined in
     terms of the magnitude and direction of their displacement from the origin.
     In a two dimensional space, \(\left( r, \theta \right)\) is an arbitrary
-    point, where either \(\theta \in (-pi, \pi \,]\) or \(\theta \in [\, 0, 2
+    point, where either \(\theta \in (-\pi, \pi \,]\) or \(\theta \in [\, 0, 2
     \pi)\). This is equivalent to \((x, y)\), the cartesian form, where \[x = r
     \cos \theta, \quad y = r \sin \theta\] \[r = \left( x^2 + y^2
         \right)^{\frac{1}{2}}, \quad \theta = \arctan \left( \frac{y}{x}
@@ -455,6 +455,12 @@ equivalence, called a Maclaurin series; \[f(x) = \sum_{r_0}^{\infty}
 \subsection{First Order Linear Inhomogeneous Ordinary Differential Equations}
 
 First order linear inhomogeneous ordinary differential equations can be
-expressed in the form \[\frac{\de y}{\de x} + P(x)y = Q(x)\]
+expressed in the form \[\frac{\de y}{\de x} + P(x)y = Q(x)\] To solve an
+equation in this form, one multiplies by an integrating factor $\lambda$ where
+\[\lambda = e ^ {\int \! P(x) \, \de x}\] This puts the equation in the form
+\[\frac{\de}{\de x}\left(y\lambda\right) = Q(x)\] hence \[y\lambda = \int \!
+    Q(x) \, \de x + \textrm{const.}\]
+
+\subsection{Second Order Linear Homogeneous ODEs}
 
 \end{document}
